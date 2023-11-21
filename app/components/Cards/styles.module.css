@@ -79,9 +79,10 @@
     line-height: normal;
     position: absolute;
     text-align: center;
-    top: 1.75rem;
+    top: 1.5rem;
     white-space: nowrap;
     width: 11.5625rem;
+    font-family: jujutsu;
 }
 
 .box .ASDASDA {
@@ -96,6 +97,7 @@
     position: absolute;
     top: 16.5rem;
     width: 15.8125rem;
+    font-family: jujutsu;
 }
 
 .box .textWrapper {
@@ -111,4 +113,10 @@
     top: 22.3125rem;
     white-space: nowrap;
     width: 7.75rem;
+    font-family: jujutsu;
+}
+
+@font-face {
+    font-family: jujutsu;
+    src: url('../../../public/jujutsu.ttf');
 }
