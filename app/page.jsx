@@ -44,6 +44,14 @@ export default function Home() {
             conseguir derrotar os 5 personagens do adversário para ganhar a partida.
           </p>
         </div>
+        {/*texto explicando frases tecnicas*/}
+        <div id={styles.termos}>
+          <h2>Frases Técnicas:</h2>
+            <p>-MP ( Média por personagem ), é a soma do ataque e a defesa do personagem;</p>
+            <p> -NP ( Nível de personagem ): Todo personagem possui um ranking que define sua raridade e o seu
+               nível de força, começando pelo nível 4 até o 1 e também o nível especial;
+            </p>
+        </div>
       </div>
     </main>
   )
