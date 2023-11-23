@@ -9,15 +9,15 @@
 }
 
 .texto {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: jujutsu;
     color: #f4f4f4;
-    font-size: 16px;
+    font-size: 22px;
     padding: 20px;
 }
 
 .icone {
-    width: 32px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
     text-decoration: none;
     color: #ad2621e2;
 }

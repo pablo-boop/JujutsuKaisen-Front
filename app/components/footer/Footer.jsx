@@ -9,7 +9,7 @@ const Footer = () => {
     return(
         <div className={styles.footer}>
 
-         <p className={styles.texto}>Copyright©-2023 Todos os direitos reservados.</p>
+         <p className={styles.texto}>©Copyright-2023 Todos os direitos reservados.</p>
 
         <div className={styles.sociais}>
         <Link href={'https://www.instagram.com/'} target='_blank' className={styles.link}>
