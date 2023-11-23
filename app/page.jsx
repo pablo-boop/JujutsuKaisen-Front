@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import Cards from './components/Cards/Cards';
 import { useScroll } from 'framer-motion';
+import Parallax from './components/Parallax/Parallax';
 
 export default function Home() {
   //API
@@ -29,16 +30,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <motion.div
-        className={styles.div}
-        style={{scaleY: scrollYProgress}}
-      >
-        <motion.img
-          src={'/banner.jpg'}
-          alt="Banner Parallax"
-          className={styles.banner}
-        />
-      </motion.div>
+      <Parallax />
     </main>
   )
 }
