@@ -1,0 +1,31 @@
+.footer {
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.texto {
+    font-family: jujutsu;
+    color: #f4f4f4;
+    font-size: 22px;
+    padding: 20px;
+}
+
+.icone {
+    width: 33px;
+    height: 33px;
+    text-decoration: none;
+    color: #ad2621e2;
+}
+
+.link {
+    margin-right: 10px;
+}
+
+.link :hover{
+    color: #f4f4f4;
+}
