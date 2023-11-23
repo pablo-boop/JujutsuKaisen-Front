@@ -1,7 +1,7 @@
-import Link from 'next/Link'
-import styles from './header.module.css'
+import Link from 'next/link';
+import styles from './header.module.css';
 
-const Header = () =>{
+const Header = () => {
     <div className={styles.header}>
 
         <img src='bandai-jujutsu-kaisen-yuji-itadori-001-1000x1000 (1).webp' width={100} height={100}></img>
