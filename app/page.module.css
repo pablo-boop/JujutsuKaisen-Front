@@ -1,0 +1,18 @@
+.main {
+    height: 150vh;
+}
+
+.div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    max-width: 80vw;
+    margin: 2rem;
+    border-radius: 0.3rem;
+    -webkit-box-shadow: -7px 11px 24px -11px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: -7px 11px 24px -11px rgba(0, 0, 0, 0.35);
+    box-shadow: -7px 11px 24px -11px rgba(0, 0, 0, 0.35);
+}
