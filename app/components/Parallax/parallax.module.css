@@ -1,0 +1,36 @@
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100vh;
+    overflow: hidden;
+    grid: auto;
+    position: relative;
+    place-items: center;
+    border-radius: 0.4rem;
+    -webkit-box-shadow: -7px 11px 24px -11px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: -7px 11px 24px -11px rgba(0, 0, 0, 0.35);
+    box-shadow: -7px 11px 24px -11px rgba(0, 0, 0, 0.35);
+}
+
+.banner {
+    position: relative;
+    width: 80vw;
+    margin: 2rem;
+}
+
+.gojo {
+    width: 20rem;
+    position: relative;
+    z-index: 10;
+    filter: drop-shadow(0 0 0.75rem #5dadec);
+    margin-bottom: 10rem;
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}

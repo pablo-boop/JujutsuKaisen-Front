@@ -2,9 +2,18 @@
 import axios from 'axios'
 import styles from './page.module.css'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion';
+import Cards from './components/Cards/Cards';
+import { useScroll } from 'framer-motion';
+import Parallax from './components/Parallax/Parallax';
 
 export default function Home() {
+  //API
   const [cards, setCards] = useState([])
+
+  //Framer Motion
+  const { scrollYProgress } = useScroll();
+
 
   useEffect(() => {
     async function fetchCards() {
@@ -20,32 +29,8 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <h1>Lista de cartas</h1>
-      <div>
-        {
-          cards ? (
-            <div>
-              {
-                cards.map((card) => (
-                  <div key={card.id}>
-                    <p>{card.name}</p>
-                    <p>{card.img}</p>
-                    <p>{card.description}</p>
-                    <p>{card.atk}</p>
-                    <p>{card.def}</p>
-                    <p>{card.level}</p>
-                  </div>
-                ))
-              }
-            </div>
-          ) : (
-            <div>
-              <p>Carregando...</p>
-            </div>
-          )
-        }
-      </div>
-    </>
+    <main className={styles.main}>
+      <Parallax />
+    </main>
   )
 }
