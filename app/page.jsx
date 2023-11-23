@@ -2,6 +2,7 @@
 import axios from 'axios'
 import styles from './page.module.css'
 import { useState, useEffect } from 'react'
+import Cards from './components/Cards/Cards';
 
 export default function Home() {
   const [cards, setCards] = useState([])
@@ -29,12 +30,7 @@ export default function Home() {
               {
                 cards.map((card) => (
                   <div key={card.id}>
-                    <p>{card.name}</p>
-                    <p>{card.img}</p>
-                    <p>{card.description}</p>
-                    <p>{card.atk}</p>
-                    <p>{card.def}</p>
-                    <p>{card.level}</p>
+                    <Cards name={card.name} img={card.img} description={card.description} atk={card.atk} def={card.def} level={card.level}/>
                   </div>
                 ))
               }
