@@ -37,24 +37,24 @@ export default function Home() {
       <div className={styles.content_container}>
         <h1>Explicação do jogo</h1>
         {/*texto explicando o TCG*/}
-        <div id={styles.TCG}>
-          <h2>Explicação do TCG:</h2>
+        <div className={styles.content}>
+          <h3>Explicação do TCG:</h3>
           <p>Um sistema de cartas com dois tipos principais sendo as cartas de personagem e as cartas de efeito.
            No começo de cada jogo é sorteado 5 cartas de personagens e 2 cartas de efeito, o objetivo é
             conseguir derrotar os 5 personagens do adversário para ganhar a partida.
           </p>
         </div>
         {/*texto explicando frases tecnicas*/}
-        <div id={styles.termos}>
-          <h2>Frases Técnicas:</h2>
+        <div className={styles.content}>
+          <h3>Frases Técnicas:</h3>
             <p>-MP ( Média por personagem ), é a soma do ataque e a defesa do personagem;</p>
             <p> -NP ( Nível de personagem ): Todo personagem possui um ranking que define sua raridade e o seu
                nível de força, começando pelo nível 4 até o 1 e também o nível especial;
             </p>
         </div>
         {/*texto explicando as regras*/}
-        <div id={styles.regras}>
-          <h2>Mecânicas e regras:</h2>
+        <div className={styles.content}>
+          <h3>Mecânicas e regras:</h3>
           <p>
             No começo de todo o jogo é somado o ataque e a defesa de todos personagens, se o valor da soma de
              todos os personagens for maior que uma média específica a mão é rerolada para balancear as duas

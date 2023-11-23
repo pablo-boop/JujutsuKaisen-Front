@@ -12,4 +12,20 @@
     align-items: center;
     justify-content: center;
 }
-/*estilo da parte de explicação do TCG */
+/*estilo da parte das explicações*/
+.content{
+    display: flex;
+    flex-direction: column;
+    max-width: 78vw;
+}
+
+.content p{
+    text-align: justify;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.content h3{
+    margin-top: 1.5rem;
+    margin-left: 0.8;
+}
