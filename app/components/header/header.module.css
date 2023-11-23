@@ -17,10 +17,16 @@
     justify-content: flex-end;
 }
 
+.ul {
+    list-style: none;
+}
+
 .ul a {
-    color: #c22824;;
+    font-family: jujutsu;
+    color: #ad2621e2;
+    list-style: none;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 19px;
 }
 
 
