@@ -31,6 +31,19 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Parallax />
+    {/*explicação do anime*/}
+
+    {/*explicação do jogo*/}
+      <div className={styles.content_container}>
+        <h1>Explicação do jogo</h1>
+        <div id={styles.TCG}>
+          <h2>Explicação do TCG:</h2>
+          <p>Um sistema de cartas com dois tipos principais sendo as cartas de personagem e as cartas de efeito.
+           No começo de cada jogo é sorteado 5 cartas de personagens e 2 cartas de efeito, o objetivo é
+            conseguir derrotar os 5 personagens do adversário para ganhar a partida.
+          </p>
+        </div>
+      </div>
     </main>
   )
 }
