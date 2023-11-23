@@ -11,10 +11,19 @@ const Parallax = () => {
     });
     const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
     const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
+    const constraintsRef = useRef(null)
 
     return (
         <div className={styles.div} ref={ref}>
-            <motion.img src={'/gojoFlying.png'} alt="gojo" style={{ y: textY }} className={styles.gojo} />
+            <motion.img
+                ref={constraintsRef}
+                src={'/gojoFlying.png'} 
+                alt="gojo" 
+                style={{ y: textY }} 
+                className={styles.gojo} 
+                drag
+                dragConstraints={constraintsRef}
+            />
             <motion.div className={styles.bg} style={
                 {
                     backgroundImage: `url(/Shibuya.webp)`,
