@@ -36,6 +36,7 @@ export default function Home() {
     {/*explicação do jogo*/}
       <div className={styles.content_container}>
         <h1>Explicação do jogo</h1>
+        {/*texto explicando o TCG*/}
         <div id={styles.TCG}>
           <h2>Explicação do TCG:</h2>
           <p>Um sistema de cartas com dois tipos principais sendo as cartas de personagem e as cartas de efeito.
