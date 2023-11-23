@@ -1,0 +1,12 @@
+.geral{
+    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLWoapNhR-gNX_kjzE3lsC_3uT3r4WRdH3dx7R1O_wLGNm0Hk7t7y8s0fG7bLuPAgyMSVp2Sdy1gdq1kSV9rtkOmuTxXK7SqvTGDfLK6MtTcmx6M4YWjXe4c6p2lqNZ1I6MVjU1M23cFYswYcUwD-x76_wCPr0TgHyHqbwiXsogFjfcAHVJPvBaAKbHq5Z/s1280/jujutsu_kaisen_cursed_clash_revelado_bandai_namco.jpg);
+    height: 100vh;
+}
+.card{
+    margin-left: 30vw;
+    display: flex;
+    flex-direction: column;
+    height: 45vh;
+    width: 45vw;
+    background-color: blue;
+}
