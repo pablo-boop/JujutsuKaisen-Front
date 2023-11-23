@@ -23,13 +23,13 @@
 
 .ul a {
     font-family: jujutsu;
-    color: #ad2621e2;
+    color: #f4f4f4;
     list-style: none;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 20px;
 }
 
 
 .ul :hover{
-  color: #f4f4f4;
+  color: #ad2621e2;
 }
