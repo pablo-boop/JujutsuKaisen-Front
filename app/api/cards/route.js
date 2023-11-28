@@ -19,7 +19,7 @@ export async function GET() {
     }
 }
 
-//função que trata requisições POST
+//função que trata as requisições POST
 export async function POST(request) {
     //extrai os parametros das requisições 
     const params = await request.json();
