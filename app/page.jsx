@@ -36,7 +36,19 @@ export default function Home() {
       <main className={styles.main}>
         <Parallax />
         {/*explicação do anime*/}
-
+          <div className={styles.anime_content}>
+          <h1>O que é Jujutsu Kaisen</h1>
+          {/*texto explicando Jujutso Kaisen*/}
+          <div className={styles.content}>
+            <p>
+            "Jujutsu Kaisen" é um anime que mergulha os espectadores em um mundo repleto de ação sobrenatural e
+             magia sombria. A trama começa quando Yuji Itadori, um estudante do ensino médio, se depara com uma
+              reliquia amaldiçoada que abriga poderosas maldições. Ao tentar proteger seus amigos, Yuji
+               acidentalmente se envolve em uma série de eventos que o levam à Escola Técnica de Jujutsu, onde
+                aprendizes combatem maldições e amaldiçoados.
+            </p>
+          </div>
+        </div>
         {/*explicação do jogo*/}
         <div className={styles.content_container}>
           <h1>Explicação do jogo</h1>
