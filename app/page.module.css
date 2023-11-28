@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 150vh;
+    background-color: #1E1E1E;
 }
 /*estilo do container da explicação do jogo*/
 .content_container{
@@ -12,20 +13,31 @@
     align-items: center;
     justify-content: center;
 }
+
+.content_container h1{
+    color: #E6E6E6;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
 /*estilo da parte das explicações*/
 .content{
     display: flex;
     flex-direction: column;
     max-width: 78vw;
+    background-color: #6B459A;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .content p{
     text-align: justify;
     margin-left: 1.5rem;
     margin-top: 0.5rem;
+    color: #E6E6E6;
 }
 
 .content h3{
     margin-top: 1.5rem;
     margin-left: 0.8;
+    color: #E6E6E6;
 }
