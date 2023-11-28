@@ -1,0 +1,50 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #1e1e1e;
+}
+
+.h1, .h2 {
+    color: #e6e6e6;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.map {
+}
+
+.input {
+    width: 30vw;
+    height: 5vh;
+    border: none;
+    padding: 0.5rem;
+    background-color: #e6e6e6;
+    border-radius: 0.3rem;
+}
+
+.select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 30vw;
+    height: 5vh;
+    padding: 0.675em 6em 0.675em 1em;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.button {
+    margin: 1rem;
+    width: 30vw;
+    height: 5vh;
+    border: none;
+    background-color: #4F0909;
+    color: #e6e6e6;
+    border-radius: 0.3rem;
+}

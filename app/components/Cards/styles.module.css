@@ -6,7 +6,6 @@
 .box .frontCard {
     height: 26.875rem;
     left: 0;
-    position: fixed;
     top: 0;
     width: 23.625rem;
 }
@@ -30,21 +29,21 @@
 }
 
 .box .background {
-    height: 20rem;
-    left: 5.5625rem;
+    height: 25rem;
+    left: 1rem;
     mix-blend-mode: overlay;
     object-fit: contain;
     position: absolute;
     top: 1.75rem;
-    width: 16rem;
+    width: 25rem;
 }
 
 .box .img {
-    height: 17rem;
-    left: 1.375rem;
+    height: 20rem;
+    left: 2rem;
     position: absolute;
-    top: 4.375rem;
-    width: 11.5625rem;
+    top: 4.5rem;
+    width: 10rem;
 }
 
 .box .infos {
@@ -97,7 +96,7 @@
     position: absolute;
     top: 16.5rem;
     width: 15.8125rem;
-    font-family: jujutsu;
+    font-size: 15px;
 }
 
 .box .textWrapper {
