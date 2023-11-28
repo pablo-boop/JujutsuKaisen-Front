@@ -5,7 +5,7 @@ const Cards = ({name, img, description, atk, def, level}) => {
         <div className={styles.box}>
             <div className={styles.frontCard}>  {/*Frente da carta*/}
                 <div className={styles.overlapGroup}>
-                    <div className={styles.card} />
+                    <div className={styles.card} />{/*carta*/}
                     <img className={styles.background} alt="Background" src={img} />  {/*imagem de fundo da carta*/}
                     <img className={styles.img} alt="Img" src={img} />  {/*imagem principal da carta*/}
                     <div className={styles.infos} />  {/*informações*/}
