@@ -29,7 +29,7 @@ const Register = () => {
     return (
         <div>
             <h1>Teste</h1>
-            <Modal />
+            <Modal buttonTitle={'Modal Teste'} modalTitle={'Contato enviado!'} modalImg={'https://cdn.icon-icons.com/icons2/1524/PNG/512/verified_106498.png'}/>
         </div>
     )
 }
