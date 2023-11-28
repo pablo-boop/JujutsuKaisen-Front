@@ -3,16 +3,16 @@ import styles from "./styles.module.css";
 const Cards = ({name, img, description, atk, def, level}) => {
     return (
         <div className={styles.box}>
-            <div className={styles.frontCard}>
+            <div className={styles.frontCard}>  {/*Frente da carta*/}
                 <div className={styles.overlapGroup}>
                     <div className={styles.card} />
-                    <img className={styles.background} alt="Background" src={img} />
-                    <img className={styles.img} alt="Img" src={img} />
-                    <div className={styles.infos} />
+                    <img className={styles.background} alt="Background" src={img} />  {/*imagem de fundo da carta*/}
+                    <img className={styles.img} alt="Img" src={img} />  {/*imagem principal da carta*/}
+                    <div className={styles.infos} />  {/*informações*/}
                     <div className={styles.upInfo} />
-                    <div className={styles.itadoriYuji}>{name}</div>
-                    <div className={styles.ASDASDA}>
-                        {level}
+                    <div className={styles.itadoriYuji}>{name}</div>  {/*nome do personagem*/}
+                    <div className={styles.ASDASDA}>  {/*nível e descrição*/}
+                        {level} 
                         <br />
                         {description}
                     </div>
