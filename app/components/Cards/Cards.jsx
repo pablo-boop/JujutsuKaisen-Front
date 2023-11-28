@@ -11,7 +11,7 @@ const Cards = ({name, img, description, atk, def, level}) => {
                     <div className={styles.infos} />  {/*informações*/}
                     <div className={styles.upInfo} />
                     <div className={styles.itadoriYuji}>{name}</div>  {/*nome do personagem*/}
-                    <div className={styles.ASDASDA}>  {/*nível e descrição*/}
+                    <div className={styles.ASDASDA}>  {/*nível e descrição do personagem*/}
                         {level} 
                         <br />
                         {description}
