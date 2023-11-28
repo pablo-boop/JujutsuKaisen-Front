@@ -1,12 +1,12 @@
-.geral{
-   background-color: #242424;
+.geral {
+    background-color: #1e1e1e;
     height: 100vh;
     padding-top: 15vh;
     font-family: jujutsu;
     display: flex;
 }
 
-.card{
+.card {
     font-family: jujutsu;
     margin-left: 11vw;
     display: flex;
@@ -17,11 +17,12 @@
     gap: 20px;
     padding: 40px;
     border-radius: 15px;
-    -webkit-box-shadow: 0px 0px 70px -19px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 70px -19px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 70px -19px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
 }
-.inputs{
+
+.inputs {
     height: 7vh;
     border-radius: 4px;
     border-color: rgb(138, 0, 197);
@@ -30,12 +31,13 @@
     color: rgb(138, 0, 197);
     margin-right: -1vw;
     width: 28vw;
-    -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    
+    -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
+
 }
-.coment{
+
+.coment {
     height: 13vh;
     border-radius: 4px;
     padding: 3px;
@@ -44,12 +46,13 @@
     border-color: rgb(138, 0, 197);
     width: 28vw;
     margin-right: -1vw;
-    -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    
+    -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
+
 }
-.button{
+
+.button {
     margin-top: 1.8vh;
     width: 9vw;
     margin-left: 9vw;
@@ -58,11 +61,12 @@
     border-radius: 7px;
     color: white;
     background-color: rgb(131, 13, 200);
-    -webkit-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
 }
-.h1{
+
+.h1 {
     margin-left: 8.6vw;
     font-family: jujutsu;
     width: 10vw;
@@ -70,26 +74,30 @@ box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
     border-radius: 25px;
     padding: 0.4rem;
 }
-.gi{
+
+.gi {
     display: flex;
-    
+
 }
-.gif{
+
+.gif {
     width: 40vw;
     height: 50vh;
     margin-left: 7.8vw;
-   border-radius: 10px;
-   margin-top: 5vh;
-   -webkit-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
-   -moz-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
-   box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    margin-top: 5vh;
+    -webkit-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
 }
-.sec{
+
+.sec {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.hrr{
+
+.hrr {
     padding: 0;
     margin: 0;
     width: 14.3vw;
@@ -98,7 +106,7 @@ box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
     margin-top: -3.5vh;
     background-color: rgb(255, 0, 212);
     color: #6B459A;
-    
+
     border: 0.1rem solid black;
 }
 
