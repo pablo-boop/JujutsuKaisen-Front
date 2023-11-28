@@ -57,6 +57,16 @@ export default function Home() {
                habilidades quanto em complexidade emocional.
             </p>
           </div>
+          
+          <div className={styles.content_text}>
+            <p>
+            O enredo é pontuado por batalhas emocionantes, estratégias astutas e a exploração de temas como
+             amizade, sacrifício e o peso do poder. A introdução dos Cursed Wombs e o Kyoto Exchange Event
+              adicionam camadas à trama, aumentando a tensão e a imprevisibilidade.
+            </p>
+          </div>
+
+          
         </div>
         {/*explicação do jogo*/}
         <div className={styles.content_container}>
