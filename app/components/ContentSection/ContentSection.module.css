@@ -1,0 +1,46 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-color: #1E1E1E;
+    padding: 1rem;
+}
+/*estilo do container da explicação do jogo*/
+.content_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.content_container h1{
+    color: #E6E6E6;
+    font-size: 45px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-family: jujutsu;
+}
+/*estilo da parte das explicações*/
+.content{
+    display: flex;
+    flex-direction: column;
+    max-width: 78vw;
+    background-color: #6B459A;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.content p{
+    text-align: justify;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    color: #E6E6E6;
+}
+
+.content h3{
+    margin-top: 1.5rem;
+    margin-left: 0.8;
+    color: #E6E6E6;
+}
