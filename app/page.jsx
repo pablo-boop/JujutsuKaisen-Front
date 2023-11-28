@@ -73,6 +73,15 @@ export default function Home() {
               alta qualidade, coreografias de luta impressionantes e personagens carismáticos.
             </p>
           </div>
+
+          <div className={styles.content_text}>
+            <p>
+            No ápice da temporada, o anime atinge um clímax impactante, proporcionando aos espectadores uma
+             conclusão satisfatória enquanto estabelece expectativas elevadas para futuros desdobramentos.
+              "Jujutsu Kaisen" cativa pela mistura habilidosa de ação intensa, desenvolvimento de personagens
+               e uma mitologia rica, tornando-se uma experiência envolvente para os fãs de anime.
+            </p>
+          </div>
         </div>
         {/*explicação do jogo*/}
         <div className={styles.content_container}>
