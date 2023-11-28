@@ -7,6 +7,42 @@
     background-color: #1E1E1E;
     padding: 1rem;
 }
+/*estilo  do container da explicação do anime*/
+.anime_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.anime_content h1{
+    color: #E6E6E6;
+    font-size: 45px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-family: jujutsu;
+}
+/*estilo da parte das explicações*/
+.content_text{
+    display: flex;
+    flex-direction: column;
+    max-width: 78vw;
+    background-color: #4F0909;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.content_text p{
+    text-align: justify;
+    margin-top: 0.5rem;
+    color: #E6E6E6;
+}
+
+
+
 /*estilo do container da explicação do jogo*/
 .content_container{
     display: flex;
@@ -27,7 +63,7 @@
     display: flex;
     flex-direction: column;
     max-width: 78vw;
-    background-color: #6B459A;
+    background-color: #4F0909;
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 1rem;
