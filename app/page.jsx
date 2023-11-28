@@ -66,7 +66,13 @@ export default function Home() {
             </p>
           </div>
 
-          
+          <div className={styles.content_text}>
+            <p>
+            A relação entre Yuji e Sukuna é particularmente intrigante, destacando-se como um elemento central
+             que continua a se aprofundar ao longo da história. O anime recebeu aclamação por sua animação de
+              alta qualidade, coreografias de luta impressionantes e personagens carismáticos.
+            </p>
+          </div>
         </div>
         {/*explicação do jogo*/}
         <div className={styles.content_container}>
