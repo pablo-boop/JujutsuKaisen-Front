@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import Cards from "../components/Cards/Cards";
 
 const Detalhes = () => {
 
@@ -46,14 +47,7 @@ const Detalhes = () => {
                             {
                                 cards.map((cards) => (
                                     <div key={cards.id}>
-                                        <p>{cards.name}</p>
-                                        <p>{cards.type}</p>
-                                        <img src={cards.img} alt="imagem da api" />
-                                        <p>{cards.typeDescription}</p>
-                                        <p>{cards.description}</p>
-                                        <p>{cards.atk}</p>
-                                        <p>{cards.def}</p>
-                                        <p>{cards.level}</p>
+                                        <Cards name={cards.name} img={cards.img} description={cards.description} atk={cards.atk} def={cards.def}/>
                                     </div>
                                 ))
                             }
