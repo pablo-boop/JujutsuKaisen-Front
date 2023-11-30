@@ -137,6 +137,22 @@
     width: 100%;
 }
 
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 1rem;
+    gap: 0.5rem;
+}
+
+.btnActions {
+    width: 42%;
+    height: 4vh;
+    border: none;
+    background-color: #e6e6e6;
+    border-radius: 0.3rem;
+}
+
 @font-face {
     font-family: jujutsu;
     src: url(../../public/jujutsu.ttf);
