@@ -11,7 +11,7 @@ export default function ContentSection({ title, text }) {
     // Dentro deste div, temos um h3 que exibe o título e um p que exibe o texto
     return (
       <div className={styles.content}>
-        <h3>{title}:</h3>
+        <h3>{title}</h3>
         <p>{text}</p>
       </div>
     )
