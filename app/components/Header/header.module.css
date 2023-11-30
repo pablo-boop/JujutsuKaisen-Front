@@ -37,3 +37,24 @@
 .ul :hover {
     color: #ad2621e2;
 }
+
+
+@media (max-width:768px) {
+   .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.header img {
+    height: 6rem;
+    width: 6rem;
+}
+
+.img  img{
+    margin: 0 auto;
+    height: 5.5rem;
+    width: 10.5rem;
+}
+
+}

@@ -1,10 +1,10 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import style from './popUp.module.css'
 
 const Popup = ({ showPopup, text, type }) => {
   const [isVisible, setIsVisible] = useState(showPopup);
-
-
 
   useEffect(() => {
     let timeoutId;
@@ -24,15 +24,25 @@ const Popup = ({ showPopup, text, type }) => {
     setIsVisible(false);
   };
 
+  let gameResult = '';
+
+  if(type === 'victory'){
+    gameResult = style.victory //se o resultado do jogo for uma Vitória
+  } else if (type === 'lose'){
+    gameResult = style.lose  //se o resultado do jogo for uma Derrota
+  } else{
+    gameResult = style.gameTied //se o resultado do jogo for um Empate
+  }
+
   return (
     <div>
       {isVisible && (
-        <div className="popup">
-          <div className={type}>
-            <div className="popup_text">
-              <p>{text}</p>
+        <div className={style.popup}>
+          <div className={style.popupContent}>
+            <div className={style.popupText}>
+              <h1>{text}</h1>
             </div>
-            <button onClick={handleClose} className="close_btn">
+            <button onClick={handleClose} className={style.botao}>
               Fechar
             </button>
           </div>

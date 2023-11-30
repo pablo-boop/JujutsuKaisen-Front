@@ -1,3 +1,48 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#ad2621e2;
+    color: #f4f4f4;
+    font-family: jujutsu;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.popupContent {
+    background-size: cover;
+    font-size: 26px;
+    width: 600px; 
+    height: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popupText {
+    margin-bottom: 20px;
+}
+
+.botao {
+    background-color: #6B459A;;
+    color: #f4f4f4;
+    font-family: jujutsu;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 19px;
+}
+
 .victory{
     background-image: url(https://64.media.tumblr.com/cbe2b9e80b19ed20f01e1116e4301444/45b51a4c48ab32aa-0a/s1280x1920/b66f2321eba38fef43af6f6562dd623b2041008b.gifv);
+}
+
+.lose{
+    background-image: url();
+}
+
+.gameTied{
+    background-image: url();
 }

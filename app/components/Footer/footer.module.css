@@ -30,3 +30,16 @@
 .link :hover{
     color: #f4f4f4;
 }
+
+@media (max-width:768px) {
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .texto{
+        text-align: center;
+    }
+}
