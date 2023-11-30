@@ -1,9 +1,10 @@
 .geral{
-   background-color: #242424;
+   background-color: rgb(24, 24, 24);
     height: 100vh;
     padding-top: 15vh;
     font-family: jujutsu;
     display: flex;
+    
 }
 
 .card{
@@ -31,6 +32,7 @@
     -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
     box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+    font-family: jujutsu;
     
 }
 .coment{
@@ -45,7 +47,7 @@
     -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
     box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
-    
+    font-family: jujutsu;
 }
 .button{
     margin-left: 50vw;
@@ -55,9 +57,11 @@
     font-family: jujutsu;
     width: 10vw;
     margin-top: -4vh;
-    border-radius: 25px;
-    padding: 0.4rem;
+    padding: 0.5rem;
     color: white;
+    font-size: xx-large;
+    border-bottom: 3px solid #e6e6e6;
+
 }
 .gi{
     display: flex;
@@ -68,7 +72,7 @@
     height: 50vh;
     margin-left: 7.8vw;
    border-radius: 10px;
-   margin-top: 5.2vh;
+   margin-top: 5.3vh;
    -webkit-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
    -moz-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
    box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
@@ -95,11 +99,29 @@
     background-color: #1e1e1e;
     color: #e6e6e6;
     width: 17vw;
+    height: 5.5vh;
+    border: none;
+    border-radius: 4px;
+    margin-top: 1vh;
     
     -webkit-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
 
+}
+.dis{
+    display: flex;
+}
+.curinga{
+    width: 5vw;
+    height: 10vh;
+    border-radius: 200px;
+    margin-top: -1.8rem;
+    background-size: cover;
+    margin-left: 6.8vw;
+    -webkit-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
 }
 
 

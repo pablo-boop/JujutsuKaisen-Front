@@ -3,6 +3,7 @@ import styles from './modal.module.css'
 
 //Import de estado
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 //Import do component do Mui Components
 import Box from '@mui/material/Box';
@@ -16,12 +17,31 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const verify = () => {
+        if(name == "" || email == "" || comment == "") {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
         <div>
-            <Button onClick={handleOpen} className={style}>{buttonTitle}</Button>
+            <motion.button
+            onClick={() => {
+                if(verify) {
+                    alert("Error")
+                } else {
+                    handleOpen
+                }
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={style}>{buttonTitle}</motion.button>
             <Modal
                 open={open}
                 onClose={handleClose}
+                onClick={onClick}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 className={styles.modal}
@@ -33,7 +53,7 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
                     <Typography id="modal-modal-description" sx={{ mt: 2 }} className={styles.content}>
                         {modalContent}
                     </Typography>
-                    <img src={modalImg} alt="Imgem Modal"  className={styles.img}/>
+                    <img src={modalImg} alt="Imgem Modal" className={styles.img} />
                 </Box>
             </Modal>
         </div>
