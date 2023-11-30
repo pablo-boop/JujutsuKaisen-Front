@@ -5,6 +5,25 @@ import { motion } from 'framer-motion';
 import { useState } from "react";
 
 const contato = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [comment, setComment] = useState("");
+
+    const verifyInputs = () => {
+        if (!name || !email || !comment) {
+            alert("Por favor, preencha todos os campos.");
+            return false;
+        }
+        return true;
+    }
+
+    const handleSubmit = () => {
+        if (verifyInputs()) {
+            // Se todos os campos estiverem preenchidos, faça algo aqui
+            alert("Parabéns, você nos contatou!");
+        }
+    }
+
     return (
         <div className={styles.geral}>
             <motion.img

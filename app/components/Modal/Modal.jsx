@@ -17,6 +17,11 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    // Adicione o estado para name, email e comment
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [comment, setComment] = useState("");
+
     const verify = () => {
         if(name == "" || email == "" || comment == "") {
             return true
@@ -29,10 +34,11 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
         <div>
             <motion.button
             onClick={() => {
-                if(verify) {
+                if(verify()) { // Chame verify como uma função
                     alert("Error")
                 } else {
-                    handleOpen
+                    handleOpen() // Chame handleOpen como uma função
+                    alert("Correct")
                 }
             }}
             whileHover={{ scale: 1.1 }}
@@ -41,7 +47,6 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
             <Modal
                 open={open}
                 onClose={handleClose}
-                onClick={onClick}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 className={styles.modal}
