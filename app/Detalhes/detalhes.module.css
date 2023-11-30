@@ -97,7 +97,6 @@
     padding: 0.4rem;
     background-color: #4e4e4e;
     border-radius: 0.3rem;
-
 }
 
 .filterBar {
@@ -139,4 +138,35 @@
 @font-face {
     font-family: jujutsu;
     src: url(../../public/jujutsu.ttf);
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .input, .select, .button {
+        width: 50vw;
+    }
+
+    .cards {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .filters {
+        gap: 0.3rem;
+    }
+
+    .btnFilter {
+        width: 30vw;
+    }
+
+    .searchBar {
+        width: 50vw;
+    }
 }
