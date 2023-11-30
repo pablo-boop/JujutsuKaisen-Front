@@ -17,31 +17,18 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const verify = () => {
-        if(name == "" || email == "" || comment == "") {
-            return true
-        } else {
-            return false
-        }
-    }
+
 
     return (
         <div>
             <motion.button
-            onClick={() => {
-                if(verify) {
-                    alert("Error")
-                } else {
-                    handleOpen
-                }
-            }}
+            onClick={handleOpen}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className={style}>{buttonTitle}</motion.button>
             <Modal
                 open={open}
                 onClose={handleClose}
-                onClick={onClick}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 className={styles.modal}

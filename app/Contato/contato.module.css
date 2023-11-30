@@ -18,6 +18,7 @@
     gap: 20px;
     padding: 40px;
     border-radius: 15px;
+    text-align: center;
   
 }
 .inputs{
@@ -60,7 +61,6 @@
     padding: 0.5rem;
     color: white;
     font-size: xx-large;
-    border-bottom: 3px solid #e6e6e6;
 
 }
 .gi{
@@ -124,53 +124,52 @@ box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
 }
 
-
 @font-face {
     font-family: jujutsu;
     src: url('../../public/jujutsu.ttf');
 }
-@media only screen and (max-device-width: 900px) {
+
+@media only screen and (max-device-width: 1000px) {
     .geral{
         flex-direction: column;
     }
-    .hrr{
-        border: none;
+    .h1{
+        margin-top: -1.7vh;
+    }
+    .modalBtn{
+        width: 30vw;
     }
     .gif{
         margin-bottom: 5vh;
         margin-top: -5vh;
         margin-left: 30vw;
+        height: auto;
     }
-    .sec{
-        gap: 1.5rem;
+    .h1{
+        font-size: xx-large;
+        margin-left: 10vw;
     }
+  
     .card{
-        width: 70vw;
-        margin-left: 16vw;
+        width: auto;
+        margin-left: 14vw;
+        margin-right: 14vw;
         margin-bottom: 30vh;
-        height: 40vh;
+        height: auto;
         
     }
     .inputs{
-        margin-top: -2.5vh;
-        width: 60vw;
+        width: 50vw;
         height: 6vh;
-        margin-left: -6vw;
     }
+
     .coment{
-        margin-top: -2.5vh;
-        width: 60vw;
-        height: 6vh;
-        margin-left: -6vw;
-    }
-    .modalBtn{
-        width: 5vw;
         
-        padding-right: 4rem;
-        padding-left: 4rem;
+        width: 50vw;
+        height: 9vh;
+        
     }
     .contato_gif__Xcrd3{
-   
         margin-left: 0;
     }
 
