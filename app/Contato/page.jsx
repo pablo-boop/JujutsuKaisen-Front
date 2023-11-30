@@ -1,4 +1,7 @@
+"use client"
 import styles from "./contato.module.css"
+import ModalPopUp from "../components/Modal/Modal"
+
 const contato = ()=> {
     return(
         <div className={styles.geral}>
@@ -8,13 +11,12 @@ const contato = ()=> {
                 <hr className={styles.hrr} />
                 <div className={styles.gi}>
                     <section>
-                
                 </section>
                 <section className={styles.sec}>
-                <input placeholder="Nome" type="text" className={styles.inputs} />
+                <input placeholder="Nome" type="text" className={styles.inputs}  />
                 <input type="text" placeholder="E-mail" className={styles.inputs} />
                 <input type="text" placeholder="Comentario" className={styles.coment} />
-                <button className={styles.button}>Enviar</button>
+                <ModalPopUp   buttonTitle={"Contatar"} modalTitle={"Você nos contatou, parabéns!"} modalContent={"Não vou ver."} modalImg={"https://i.pinimg.com/originals/68/f1/42/68f142cc473e62240c593f7290d263ab.gif"} style={styles.modalBtn} />
                 </section>
                 </div>
                 

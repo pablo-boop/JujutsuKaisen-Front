@@ -11,14 +11,14 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 //Component de Modal
-const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg }) => {
+const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     return (
         <div>
-            <Button onClick={handleOpen} className={styles.button}>{buttonTitle}</Button>
+            <Button onClick={handleOpen} className={style}>{buttonTitle}</Button>
             <Modal
                 open={open}
                 onClose={handleClose}
