@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:#ad2621e2;
+    background-color:#b4211c;
     color: #f4f4f4;
     font-family: jujutsu;
     padding: 20px;
@@ -33,6 +33,7 @@
     border-radius: 8px;
     padding: 10px;
     font-size: 19px;
+    margin-top: 150px;
 }
 
 .victory{
@@ -40,7 +41,7 @@
 }
 
 .lose{
-    background-image: url();
+    background-image: url()
 }
 
 .gameTied{
