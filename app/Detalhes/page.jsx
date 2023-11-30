@@ -35,14 +35,7 @@ const Detalhes = () => {
         try {
             const response = await axios.post("/api/cards", { name, type, img, typeDesc, description, atk, def, level });
             setCards([...cards, response.data.cards]);
-            setName('')
-            setType('')
-            setImg('')
-            setTypeDesc('')
-            setDescription('')
-            setAtk('')
-            setDef('')
-            setLevel('')
+            clean()
         } catch (error) {
             console.error("Error submitting data:", error);
         }
@@ -78,6 +71,18 @@ const Detalhes = () => {
     const update = async (id) => {
         router.push(`/cards/${id}`);
     };
+
+    //Função de limpar os campos dos inputs
+    const clean = () => {
+        setName('')
+        setType('')
+        setImg('')
+        setTypeDesc('')
+        setDescription('')
+        setAtk('')
+        setDef('')
+        setLevel('')
+    }
 
     return (
         <>
