@@ -30,20 +30,20 @@
 
 .box .background {
     height: 25rem;
-    left: 1rem;
+    left: 0rem;
     mix-blend-mode: overlay;
-    object-fit: contain;
+    object-fit: fill;
     position: absolute;
-    top: 1.75rem;
-    width: 25rem;
+    top: 0rem;
+    width: 20rem;
 }
 
 .box .img {
-    height: 20rem;
-    left: 2rem;
+    height: 18rem;
+    left: 0.5rem;
     position: absolute;
     top: 4.5rem;
-    width: 10rem;
+    width: 14rem;
 }
 
 .box .infos {

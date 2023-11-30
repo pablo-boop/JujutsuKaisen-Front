@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const Cards = ({name, img, description, atk, def, level}) => {
+const Cards = ({name, img, typeDesc, description, atk, def, level}) => {
     return (
         <div className={styles.box}>
             <div className={styles.frontCard}>  {/*Frente da carta*/}
@@ -12,7 +12,7 @@ const Cards = ({name, img, description, atk, def, level}) => {
                     <div className={styles.upInfo} />
                     <div className={styles.itadoriYuji}>{name}</div>  {/*nome do personagem*/}
                     <div className={styles.ASDASDA}>  {/*nível e descrição do personagem*/}
-                        {level} 
+                        {typeDesc} :
                         <br />
                         {description}
                     </div>

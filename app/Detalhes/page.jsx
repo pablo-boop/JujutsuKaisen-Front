@@ -112,7 +112,7 @@ const Detalhes = () => {
                                     {
                                         cards.map((cards) => (
                                             <div key={cards.id}>
-                                                <Cards name={cards.name} img={cards.img} description={cards.description} atk={cards.atk} def={cards.def} />
+                                                <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} />
                                             </div>
                                         ))
                                     }
