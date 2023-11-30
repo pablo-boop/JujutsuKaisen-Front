@@ -3,9 +3,11 @@
     align-items: center;
     justify-content: space-around;
     background-color: #1e1e1e;
+    min-height: 100vh;
 }
 
-.h1, .h2 {
+.h1,
+.h2 {
     color: #e6e6e6;
 }
 
@@ -15,9 +17,11 @@
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
-}
-
-.map {
+    padding: 1rem;
+    -webkit-box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    border-radius: 0.4rem;
 }
 
 .input {
@@ -37,6 +41,7 @@
     padding: 0.675em 6em 0.675em 1em;
     border-radius: 0.3rem;
     cursor: pointer;
+    background-color: #e6e6e6;
 }
 
 .button {
@@ -47,4 +52,91 @@
     background-color: #4F0909;
     color: #e6e6e6;
     border-radius: 0.3rem;
+}
+
+.registerTitle {
+    margin: 1rem;
+    border-bottom: 2px solid #4F0909;
+}
+
+.title {
+    font-size: 30px;
+    color: #e6e6e6;
+    font-weight: 100;
+    font-family: jujutsu;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 1rem;
+    -webkit-box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    border-radius: 0.4rem;
+    height: 80vh;
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: first baseline;
+    width: 80%;
+    height: 100%;
+    gap: 5rem;
+}
+
+.searchBar {
+    width: 30vw;
+    height: 3.5vh;
+    border: none;
+    padding: 0.4rem;
+    background-color: #4e4e4e;
+    border-radius: 0.3rem;
+
+}
+
+.filterBar {
+    width: 100%;
+    height: 20%;
+    margin: 2rem;
+}
+
+.mappedCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    gap: 0.2rem;
+}
+
+.btnFilter {
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    font-size: 15px;
+    color: #e6e6e6;
+    font-weight: 300;
+    width: 100%;
+}
+
+@font-face {
+    font-family: jujutsu;
+    src: url(../../public/jujutsu.ttf);
 }
