@@ -17,12 +17,38 @@ const ModalPopUp = ({ buttonTitle, modalTitle, modalContent, modalImg, style }) 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+<<<<<<< HEAD
 
+=======
+    // Adicione o estado para name, email e comment
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [comment, setComment] = useState("");
+
+    const verify = () => {
+        if(name == "" || email == "" || comment == "") {
+            return true
+        } else {
+            return false
+        }
+    }
+>>>>>>> ffdbd1e7b5b0357d8649468bfc6e1e49b38c5f04
 
     return (
         <div>
             <motion.button
+<<<<<<< HEAD
             onClick={handleOpen}
+=======
+            onClick={() => {
+                if(verify()) { // Chame verify como uma função
+                    alert("Error")
+                } else {
+                    handleOpen() // Chame handleOpen como uma função
+                    alert("Correct")
+                }
+            }}
+>>>>>>> ffdbd1e7b5b0357d8649468bfc6e1e49b38c5f04
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className={style}>{buttonTitle}</motion.button>
