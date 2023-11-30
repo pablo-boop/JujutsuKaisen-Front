@@ -31,8 +31,9 @@
     background-color: #4F0909;
     padding: 1rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 1rem;
-    width: 50%;
+    
 }
 
 .content p{
