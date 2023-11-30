@@ -82,6 +82,14 @@
     color: #E6E6E6;
 }
 
+.h2 {
+    font-family: jujutsu;
+    font-size: 40px;
+    font-weight: 200;
+    margin: 2rem;
+    color: #E6E6E6;
+}
+
 @font-face {
     font-family: jujutsu;
     src: url('../public/jujutsu.ttf');

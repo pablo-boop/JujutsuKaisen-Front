@@ -2,10 +2,12 @@
 
 import styles from './detalhes.module.css'
 import { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
 import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Cards from "../components/Cards/Cards";
+import { style } from 'motion';
 
 const Detalhes = () => {
 
@@ -22,6 +24,9 @@ const Detalhes = () => {
     const [atk, setAtk] = useState('')
     const [def, setDef] = useState('')
     const [level, setLevel] = useState('')
+
+    //Estado da Search Bar
+    const[searchBar, setSearchBar] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -62,6 +67,9 @@ const Detalhes = () => {
             <main className={styles.main}>
                 <div>
                     <section className={styles.register}>
+                        <div className={styles.registerTitle}>
+                            <h2 className={styles.title}>Registrar personagens</h2>
+                        </div>
                         <input className={styles.input} type="text" value={name} onChange={e => setName(e.target.value)} placeholder='Nome' />
                         <select className={styles.select} name="type" id="type" onChange={e => setType(e.target.value)}>
                             <option className={styles.option} value="">Selecione o tipo da carta</option>
@@ -81,25 +89,39 @@ const Detalhes = () => {
                             <option className={styles.option} value="terceiro">Terceiro</option>
                             <option className={styles.option} value="quarto">Quarto</option>
                         </select>
-                        <button onClick={handleSubmit} className={styles.button}>Enviar</button>
+                        <motion.button
+                            onClick={handleSubmit}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            className={styles.button}>Registrar</motion.button>
                     </section>
                 </div>
-                <div>
-                    {
-                        dados ? (
-                            <div className={styles.map}>
-                                {
-                                    cards.map((cards) => (
-                                        <div key={cards.id}>
-                                            <Cards name={cards.name} img={cards.img} description={cards.description} atk={cards.atk} def={cards.def} />
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        ) : (
-                            <p>Carregando API...</p>
-                        )
-                    }
+                <div className={styles.cards}>
+                    <div className={styles.filters}>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Feiticeiros</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Maldições</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Efeitos</motion.button>
+                    </div>
+                    <div className={styles.map}>
+                        <div className={style.filterBar}>
+                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo nome' value={searchBar} onChange={e => setSearchBar(e.target.value)}/>
+                        </div>
+                        {
+                            dados ? (
+                                <div className={styles.mappedCards}>
+                                    {
+                                        cards.map((cards) => (
+                                            <div key={cards.id}>
+                                                <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} />
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                            ) : (
+                                <p>Carregando API...</p>
+                            )
+                        }
+                    </div>
                 </div>
             </main>
             <Footer />

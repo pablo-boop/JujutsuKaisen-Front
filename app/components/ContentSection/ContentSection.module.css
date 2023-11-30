@@ -24,9 +24,11 @@
 /*estilo da parte das explicações*/
 .content{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     max-width: 78vw;
-    background-color: #6B459A;
+    background-color: #4F0909;
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 1rem;
@@ -40,7 +42,6 @@
 }
 
 .content h3{
-    margin-top: 1.5rem;
-    margin-left: 0.8;
+    margin: 1rem;
     color: #E6E6E6;
 }
