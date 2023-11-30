@@ -1,13 +1,14 @@
 'use client'
 
+//Imports from style and components
 import styles from './detalhes.module.css'
-import { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
-import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Cards from "../components/Cards/Cards";
-import { style } from 'motion';
+//Hook imports
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Detalhes = () => {
 
@@ -26,7 +27,7 @@ const Detalhes = () => {
     const [level, setLevel] = useState('')
 
     //Estado da Search Bar
-    const[searchBar, setSearchBar] = useState('')
+    const [searchBar, setSearchBar] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -61,6 +62,23 @@ const Detalhes = () => {
 
         fetchCards();
     }, []);
+
+    //Função PUT e DELETE
+    const deletar = async (id) => {
+        const url = `/api/cards/${id}`;
+        try {
+            await axios.delete(url);
+            setDados(dados.filter((card) => card.id !== id));
+            setCards(cards.filter((card) => card.id !== id))
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+
+    const update = async (id) => {
+        router.push(`/cards/${id}`);
+    };
+
     return (
         <>
             <Header />
@@ -103,16 +121,26 @@ const Detalhes = () => {
                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Efeitos</motion.button>
                     </div>
                     <div className={styles.map}>
-                        <div className={style.filterBar}>
-                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo nome' value={searchBar} onChange={e => setSearchBar(e.target.value)}/>
+                        <div className={styles.filterBar}>
+                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo nome' value={searchBar} onChange={e => setSearchBar(e.target.value)} />
                         </div>
                         {
                             dados ? (
                                 <div className={styles.mappedCards}>
                                     {
-                                        cards.map((cards) => (
+                                        cards.filter((name) => {
+                                            if (searchBar == "") {
+                                                return name
+                                            } else if (name.name.toLowerCase().includes(searchBar.toLocaleLowerCase())) {
+                                                return name
+                                            }
+                                        }).map((cards) => (
                                             <div key={cards.id}>
                                                 <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} />
+                                                <div className={styles.actions}>
+                                                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
+                                                    <motion.button onClick={() => console.log(cards.id) } whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
+                                                </div>
                                             </div>
                                         ))
                                     }

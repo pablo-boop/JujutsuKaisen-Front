@@ -37,7 +37,7 @@ export async function PUT(req, res) {
         const response = await axios.put(url, params);
 
         //retorna uma resposta com os dados recebidos.
-        return res.status(200).json(response.data);
+        return NextResponse.json(response.data);
     } catch (error) {
         //em caso de erro nas requisições, retorna uma mensagem de erro interno no servidor
         console.log("[ORDER_PUT]", error);
@@ -54,7 +54,7 @@ export async function DELETE(req, res) {
         const response = await axios.delete(`${url}/${params.id}`);
 
         //retorna uma resposta com os dados recebidos.
-        return res.status(200).json(response.data);
+        return NextResponse.json(response.data);
     } catch (error) {
         //em caso de erro nas requisições, retorna uma mensagem de erro interno no servidor
         console.log("[ORDER_DELETE]", error);
