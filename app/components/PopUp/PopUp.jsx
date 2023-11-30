@@ -5,7 +5,7 @@ import style from './popUp.module.css'
 const Popup = ({ showPopup, text, type }) => {
   const [isVisible, setIsVisible] = useState(showPopup);
 
-  useEffect(() => {
+ /* useEffect(() => {
     let timeoutId;
 
     if (isVisible) {
@@ -17,7 +17,7 @@ const Popup = ({ showPopup, text, type }) => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [isVisible]);
+  }, [isVisible]); */
 
   const handleClose = () => {
     setIsVisible(false);
