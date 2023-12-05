@@ -24,29 +24,6 @@
     font-family: jujutsu;
 }
 /*estilo da parte das explicações*/
-.content{
-    display: flex;
-    flex-direction: column;
-    max-width: 78vw;
-    background-color: #4F0909;
-    padding: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 1rem;
-}
-
-.content p{
-    text-align: justify;
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
-    color: #E6E6E6;
-}
-
-.content h3{
-    margin-top: 1.5rem;
-    margin-left: 0.8;
-    color: #E6E6E6;
-}
 
 .h2 {
     font-family: jujutsu;
