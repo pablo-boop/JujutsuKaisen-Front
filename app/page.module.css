@@ -70,9 +70,14 @@
 
 }
 
-
-
 @font-face {
     font-family: jujutsu;
     src: url('../public/jujutsu.ttf');
+}
+
+@media screen and (min-width: 600px) {
+    .imgLayout{
+        width: 50vw;
+        height: 50vh;
+    }
 }
