@@ -16,12 +16,6 @@
     justify-content: center;
 }
 
-/*.mini_container{
-    display: flex;
-    flex-direction: row-reverse;
-    margin-left: 10rem;
-}*/
-
 .content_container h1{
     color: #E6E6E6;
     font-size: 45px;
@@ -69,15 +63,15 @@
     
 
 }
-
+/*fonte da pagina*/
 @font-face {
     font-family: jujutsu;
     src: url('../public/jujutsu.ttf');
 }
-
-@media screen and (min-width: 600px) {
-    .imgLayout{
-        width: 50vw;
-        height: 50vh;
+/*responsividade*/
+@media only screen and (max-device-width: 600px) {
+    .imgLayout img{
+        width: 60vw;
+        height: 30vh;
     }
 }
