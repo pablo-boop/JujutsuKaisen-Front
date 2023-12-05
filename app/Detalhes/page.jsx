@@ -146,6 +146,7 @@ const Detalhes = () => {
                                                 key={cards.uuid}
                                                 animate={{ y: 25 }}
                                                 transition={{ type: "spring", stiffness: 100 }}
+                                                className={styles.cardMap}
                                             >
                                                 <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} level={cards.level}/>
                                                 <div className={styles.actions}>
