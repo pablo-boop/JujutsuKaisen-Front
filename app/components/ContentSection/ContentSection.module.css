@@ -33,3 +33,9 @@
     margin: 1rem;
     color: #E6E6E6;
 }
+
+@media only screen and (max-device-width: 600px) {
+    .content p{
+        font-size: 0.0.1rem;
+    }
+}
