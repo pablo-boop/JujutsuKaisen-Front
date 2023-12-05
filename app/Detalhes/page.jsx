@@ -6,16 +6,18 @@ import { motion } from 'framer-motion';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Cards from "../components/Cards/Cards";
+import { useRouter } from 'next/navigation';
 //Hook imports
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Detalhes = () => {
-
-    //Estado API
+    
+    //Estado API e rotas
     const [dados, setDados] = useState(null)
     const [cards, setCards] = useState(null)
-
+    const router = useRouter();
+    
     //Estado das propriedades
     const [name, setName] = useState('')
     const [type, setType] = useState('')
@@ -54,7 +56,7 @@ const Detalhes = () => {
         }
 
         fetchCards();
-    }, []);
+    }, [dados]);
 
     //Função PUT e DELETE
     const deletar = async (id) => {
@@ -69,7 +71,7 @@ const Detalhes = () => {
     };
 
     const update = async (id) => {
-        router.push(`/cards/${id}`);
+        router.push(`/Detalhes/${id}`);
     };
 
     //Função de limpar os campos dos inputs
@@ -140,11 +142,11 @@ const Detalhes = () => {
                                                 return name
                                             }
                                         }).map((cards) => (
-                                            <div key={cards.id}>
+                                            <div key={cards.uuid}>
                                                 <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} />
                                                 <div className={styles.actions}>
-                                                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
-                                                    <motion.button onClick={() => console.log(cards.id) } whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
+                                                    <motion.button onClick={() => update(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
+                                                    <motion.button onClick={() => deletar(cards.uuid) } whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
                                                 </div>
                                             </div>
                                         ))
