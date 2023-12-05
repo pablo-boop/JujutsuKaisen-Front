@@ -20,7 +20,7 @@ const Header = () => {
                 <ul className={styles.ul}>
                     <li><Link href={'/Contato'}>Contato</Link></li>
                     <li><Link href={'/S'}>S</Link></li>
-                    <li><Link href={'/'}>Detalhes</Link></li>
+                    <li><Link href={'/Detalhes'}>Detalhes</Link></li>
                 </ul>
             </nav>
         </div>
