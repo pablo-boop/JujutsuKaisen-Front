@@ -1,117 +1,174 @@
-.geral {
-    background-color: #1e1e1e;
-    height: 100vh;
-    padding-top: 15vh;
-    font-family: jujutsu;
-    display: flex;
-}
-
-.card {
-    font-family: jujutsu;
-    margin-left: 11vw;
-    display: flex;
-    flex-direction: column;
-    height: 62vh;
-    width: 34.2vw;
-    background-color: #6B459A;
-    gap: 20px;
-    padding: 40px;
-    border-radius: 15px;
-    -webkit-box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
-}
-
-.inputs {
-    height: 7vh;
-    border-radius: 4px;
-    border-color: rgb(138, 0, 197);
-    padding: 3px;
-    font-size: 0.85rem;
-    color: rgb(138, 0, 197);
-    margin-right: -1vw;
-    width: 28vw;
-    -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
-
-}
-
-.coment {
-    height: 13vh;
-    border-radius: 4px;
-    padding: 3px;
-    font-size: medium;
-    color: rgb(138, 0, 197);
-    border-color: rgb(138, 0, 197);
-    width: 28vw;
-    margin-right: -1vw;
-    -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
-    box-shadow: inset -3px 3px 13px -3px rgba(0, 0, 0, 0.75);
-
-}
-
-.button {
-    margin-top: 1.8vh;
-    width: 9vw;
-    margin-left: 9vw;
-    height: 7vh;
-    border: none;
-    border-radius: 7px;
-    color: white;
-    background-color: rgb(131, 13, 200);
-    -webkit-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
-}
-
-.h1 {
-    margin-left: 8.6vw;
-    font-family: jujutsu;
-    width: 10vw;
-    margin-top: -4vh;
-    border-radius: 25px;
-    padding: 0.4rem;
-}
-
-.gi {
-    display: flex;
-
-}
-
-.gif {
-    width: 40vw;
-    height: 50vh;
-    margin-left: 7.8vw;
+.geral{
+    background-color: rgb(24, 24, 24);
+     height: 100vh;
+     padding-top: 15vh;
+     font-family: jujutsu;
+     display: flex;
+     
+ }
+ 
+ .card{
+     font-family: jujutsu;
+     margin-left: 11vw;
+     display: flex;
+     flex-direction: column;
+     height: 62vh;
+     width: 34.2vw;
+     background-color: rgb(91, 11, 11);
+     gap: 20px;
+     padding: 40px;
+     border-radius: 15px;
+   
+ }
+ .inputs{
+     height: 7vh;
+     border-radius: 4px;
+     border-color: #4f0909;
+     padding: 3px;
+     font-size: 0.85rem;
+     color: #4f0909;
+     margin-right: -1vw;
+     width: 28vw;
+     -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+     -moz-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+     box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+     font-family: jujutsu;
+     
+ }
+ .coment{
+     height: 13vh;
+     border-radius: 4px;
+     padding: 3px;
+     font-size: medium;
+     color: #4f0909;
+     border-color: #4f0909;
+     width: 28vw;
+     margin-right: -1vw;
+     -webkit-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+     -moz-box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+     box-shadow: inset -3px 3px 13px -3px rgba(0,0,0,0.75);
+     font-family: jujutsu;
+ }
+ .h1{
+     margin-left: 8.6vw;
+     font-family: jujutsu;
+     width: 10vw;
+     margin-top: -4vh;
+     padding: 0.5rem;
+     color: white;
+     font-size: xx-large;
+     border-bottom: 3px solid #e6e6e6;
+ 
+ }
+ .gi{
+     display: flex;
+     
+ }
+ .gif{
+     width: 40vw;
+     height: 50vh;
+     margin-left: 7.8vw;
     border-radius: 10px;
-    margin-top: 5vh;
-    -webkit-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 1px 5px 17px 0px rgba(0, 0, 0, 0.75);
-}
-
-.sec {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.hrr {
-    padding: 0;
-    margin: 0;
-    width: 14.3vw;
-    height: 14px;
-    margin-left: 6.2vw;
-    margin-top: -3.5vh;
-    background-color: rgb(255, 0, 212);
-    color: #6B459A;
-
-    border: 0.1rem solid black;
-}
-
+    margin-top: 5.3vh;
+    -webkit-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 5px 17px 0px rgba(0,0,0,0.75);
+ }
+ .sec{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 1rem;
+ }
+ .hrr{
+     padding: 0;
+     margin: 0;
+     width: 14.3vw;
+     height: 14px;
+     margin-left: 6.2vw;
+     margin-top: -3.5vh;
+     
+     border: 0.1rem solid rgb(255, 255, 255);
+ }
+ 
+ .modalBtn {
+     background-color: #1e1e1e;
+     color: #e6e6e6;
+     width: 17vw;
+     height: 5.5vh;
+     border: none;
+     border-radius: 4px;
+     margin-top: 1vh;
+     
+     -webkit-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+ -moz-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+ box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+ 
+ }
+ .dis{
+     display: flex;
+ }
+ .curinga{
+     width: 5vw;
+     height: 10vh;
+     border-radius: 200px;
+     margin-top: -1.8rem;
+     background-size: cover;
+     margin-left: 6.8vw;
+     -webkit-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+ -moz-box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+ box-shadow: 0px 0px 57px -5px rgba(0,0,0,0.75);
+ }
 
 @font-face {
     font-family: jujutsu;
     src: url('../../public/jujutsu.ttf');
+}
+
+@media only screen and (max-device-width: 1000px) {
+    .geral{
+        flex-direction: column;
+    }
+    .h1{
+        margin-top: -1.7vh;
+    }
+    .modalBtn{
+        width: 30vw;
+    }
+    .gif{
+        margin-bottom: 5vh;
+        margin-top: -5vh;
+        margin-left: 17.9vw;
+        height: auto;
+        width: 65vw;
+    }
+    .h1{
+        font-size: xx-large;
+        margin-left: 10vw;
+    }
+  
+    .card{
+        width: auto;
+        margin-left: 14vw;
+        margin-right: 14vw;
+        margin-bottom: 30vh;
+        height: auto;
+        
+    }
+    .inputs{
+        width: 50vw;
+        height: 6vh;
+    }
+
+    .coment{
+        
+        width: 50vw;
+        height: 9vh;
+        
+    }
+    .contato_gif__Xcrd3{
+        margin-left: 0;
+    }
+
 }
