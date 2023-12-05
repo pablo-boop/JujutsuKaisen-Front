@@ -12,12 +12,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const Detalhes = () => {
-    
+
     //Estado API e rotas
     const [dados, setDados] = useState(null)
     const [cards, setCards] = useState(null)
     const router = useRouter();
-    
+
     //Estado das propriedades
     const [name, setName] = useState('')
     const [type, setType] = useState('')
@@ -122,11 +122,11 @@ const Detalhes = () => {
                     </section>
                 </div>
                 <div className={styles.cards}>
-                    <div className={styles.filters}>
+                    {/* <div className={styles.filters}>
                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Feiticeiros</motion.button>
                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Maldições</motion.button>
                         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Efeitos</motion.button>
-                    </div>
+                    </div> */}
                     <div className={styles.map}>
                         <div className={styles.filterBar}>
                             <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo nome' value={searchBar} onChange={e => setSearchBar(e.target.value)} />
@@ -142,13 +142,17 @@ const Detalhes = () => {
                                                 return name
                                             }
                                         }).map((cards) => (
-                                            <div key={cards.uuid}>
-                                                <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} />
+                                            <motion.div
+                                                key={cards.uuid}
+                                                animate={{ y: 25 }}
+                                                transition={{ type: "spring", stiffness: 100 }}
+                                            >
+                                                <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} level={cards.level}/>
                                                 <div className={styles.actions}>
                                                     <motion.button onClick={() => update(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
-                                                    <motion.button onClick={() => deletar(cards.uuid) } whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
+                                                    <motion.button onClick={() => deletar(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         ))
                                     }
                                 </div>
