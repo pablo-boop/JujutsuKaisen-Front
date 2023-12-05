@@ -38,6 +38,7 @@
     color: #ad2621e2;
 }
 
+
 @media (max-width:768px) {
     .header {
      display: flex;
