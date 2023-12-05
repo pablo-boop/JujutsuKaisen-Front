@@ -16,7 +16,7 @@
     flex-direction: column;
     max-width: 78vw;
     background-color: #4F0909;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
@@ -25,7 +25,6 @@
 
 .content p{
     text-align: justify;
-    margin-left: 1.5rem;
     margin-top: 0.5rem;
     color: #E6E6E6;
 }
