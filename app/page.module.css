@@ -48,7 +48,7 @@
 /*responsividade*/
 @media only screen and (max-device-width: 600px) {
     .imgLayout img{
-        width: 60vw;
-        height: 30vh;
+        width: 67vw;
+        height: 27vh;
     }
 }
