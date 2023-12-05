@@ -3,17 +3,22 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:#b4211c;
+    background-image: url('https://media.tenor.com/m1arMEn09NcAAAAd/todo-aoi-todo.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
     color: #f4f4f4;
     font-family: jujutsu;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
 }
 
 .popupContent {
     background-size: cover;
-    font-size: 26px;
+    font-size: 32px;
     width: 600px; 
     height: 300px; 
     display: flex;
@@ -21,9 +26,9 @@
     align-items: center;
     justify-content: center;
     font-family: jujutsu;
-    -webkit-box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 70px -19px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow:0px 0px 70px 19px rgb(0, 0, 0);
+    -moz-box-shadow: 0px 0px 70px -19px rgb(0, 0, 0);
+    box-shadow: 0px 0px 70px 19px rgb(0, 0, 0);
 }
 
 .popupText {
@@ -38,18 +43,11 @@
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    font-size: 19px;
-    margin-top: 150px;
+    font-size: 20px;
+    margin-top: 120px;
 }
 
-.victory {
-    background-image: url(https://64.media.tumblr.com/cbe2b9e80b19ed20f01e1116e4301444/45b51a4c48ab32aa-0a/s1280x1920/b66f2321eba38fef43af6f6562dd623b2041008b.gifv);
-}
-
-.lose {
-    background-image: url();
-}
-
-.gameTied {
-    background-image: url();
+@font-face {
+    font-family: jujutsu;
+    src: url('../../../public/jujutsu.ttf');
 }

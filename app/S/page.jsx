@@ -18,10 +18,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <button onClick={() => handleShowPopUp ('Você Ganhou!', 'victory')}>
+      <button onClick={() => handleShowPopUp ('Voce Ganhou!', 'victory')}>
         Mensagem de Vitória
       </button>
-      <button onClick={() => handleShowPopUp ('Você Perdeu!', 'lose')}>
+      <button onClick={() => handleShowPopUp ('Voce Perdeu!', 'lose')}>
         Mensagem de Derrota
       </button>
       <button onClick={() => handleShowPopUp ('Empate!', 'gameTied')}>
