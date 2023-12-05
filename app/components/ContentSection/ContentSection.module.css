@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-color: #1E1E1E;
+    padding: 1rem;
+}
+
+/*estilo da parte das explicações*/
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 78vw;
+    background-color: #4F0909;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    
+}
+
+.content p{
+    text-align: justify;
+    margin-top: 0.5rem;
+    color: #E6E6E6;
+}
+
+.content h3{
+    margin: 1rem;
+    color: #E6E6E6;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .content p{
+        font-size: 0.0.1rem;
+    }
+}

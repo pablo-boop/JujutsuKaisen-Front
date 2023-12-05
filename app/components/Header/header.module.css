@@ -11,6 +11,10 @@
     margin: 0 auto;
 }
 
+.logo {
+    filter: drop-shadow(0 0 0.75rem #000);
+}
+
 .nav {
     margin-right: 20px;
     display: flex;

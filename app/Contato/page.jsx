@@ -61,7 +61,8 @@ const contato = () => {
                     </section>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     )
 }
 export default contato

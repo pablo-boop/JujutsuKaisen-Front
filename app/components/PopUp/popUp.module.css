@@ -1,0 +1,49 @@
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('https://media.tenor.com/m1arMEn09NcAAAAd/todo-aoi-todo.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: #f4f4f4;
+    font-family: jujutsu;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
+}
+
+.popupContent {
+    background-size: cover;
+    font-size: 32px;
+    width: 600px; 
+    height: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: jujutsu;
+    -webkit-box-shadow:0px 0px 60px 19px rgb(0, 0, 0);
+    -moz-box-shadow: 0px 0px 60px -19px rgb(0, 0, 0);
+    box-shadow: 0px 0px 60px 19px rgb(0, 0, 0);
+}
+
+.botao {
+    background-color:#ad2621;
+    color: #f4f4f4;
+    font-family: jujutsu;
+    border-radius: 8px;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    margin-top: 120px;
+}
+
+@font-face {
+    font-family: jujutsu;
+    src: url('../../../public/jujutsu.ttf');
+}

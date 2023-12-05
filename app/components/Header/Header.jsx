@@ -10,14 +10,16 @@ const Header = () => {
 
             {/*imagem da logo*/}
             <div className={styles.img}>
-                <img src={'/title.png'} width={210} height={110}></img>
+                <Link href={'/'}>
+                    <img src={'/jujutsu-japanese.png'} width={250} height={100} className={styles.logo}></img>
+                </Link>
             </div>
 
             <nav className={styles.nav}>
                 {/*lista de links para as outras páginas*/}
                 <ul className={styles.ul}>
-                    <li><Link href={'/'}>Home</Link></li>
-                    <li><Link href={'/'}>Contato</Link></li>
+                    <li><Link href={'/Contato'}>Contato</Link></li>
+                    <li><Link href={'/S'}>S</Link></li>
                     <li><Link href={'/'}>Detalhes</Link></li>
                 </ul>
             </nav>

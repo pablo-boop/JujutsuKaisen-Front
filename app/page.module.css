@@ -5,7 +5,9 @@
     justify-content: center;
     height: auto;
     background-color: #1E1E1E;
+    padding: 1rem;
 }
+
 /*estilo do container da explicação do jogo*/
 .content_container{
     display: flex;
@@ -22,30 +24,31 @@
     font-family: jujutsu;
 }
 /*estilo da parte das explicações*/
-.content{
-    display: flex;
-    flex-direction: column;
-    max-width: 78vw;
-    background-color: #6B459A;
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 1rem;
-}
 
-.content p{
-    text-align: justify;
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
+.h2 {
+    font-family: jujutsu;
+    font-size: 40px;
+    font-weight: 200;
+    margin: 2rem;
     color: #E6E6E6;
+    text-align: center;
 }
 
-.content h3{
-    margin-top: 1.5rem;
-    margin-left: 0.8;
-    color: #E6E6E6;
-}
+.imgLayout img{
+    width: 40vw;
+    height: 50vh;
+    
 
+}
+/*fonte da pagina*/
 @font-face {
     font-family: jujutsu;
     src: url('../public/jujutsu.ttf');
+}
+/*responsividade*/
+@media only screen and (max-device-width: 600px) {
+    .imgLayout img{
+        width: 67vw;
+        height: 27vh;
+    }
 }
