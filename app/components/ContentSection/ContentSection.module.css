@@ -34,8 +34,20 @@
     color: #E6E6E6;
 }
 
+.content img{
+    margin-top: 0.6rem;
+    border-radius: 8px;
+}
+
 @media only screen and (max-device-width: 600px) {
     .content p{
         font-size: 0.0.1rem;
+    }
+
+    .content img{
+        margin-top: 0.6rem;
+        border-radius: 8px;
+        display: none;
+        visibility: hidden;
     }
 }
