@@ -1,39 +1,31 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import style from './popUp.module.css'
+import React from 'react';
+import styles from './popup.module.css';
 
-const Popup = ({ background, message }) => {
-  const [showPopup, setShowPopup] = useState(false);
-  const [popupBackground, setPopupBackground] = useState('');
-  const [popupMessage, setPopupMessage] = useState('');
-
-  const handleClose = () => {
-    setShowPopup(false);
-  };
-
-  const handleShowPopUp = (background, message) => {
-    setShowPopup(true);
-    setPopupBackground(background);
-    setPopupMessage(message);
-  }
-
+const Popup = ({ showPopup, popupBackground, popupMessage, onClose }) => {
   return (
-    <div>
-
+    <>
       {showPopup && (
-        <div className={style.popup}  style={{
-          backgroundImage: `url(${background})`}}>
-          <div className={style.popupContent}>
-            <div className={style.popupMessage}>
-              <h1>{message}</h1>
+        <div className={styles.container}>
+          <div
+            className={styles.popup}
+            style={{
+              backgroundImage: popupBackground,
+              fontSize: 40,
+              WebkitTextStrokeWidth: 0.7,
+              WebkitTextStrokeColor: 'black',
+            }}
+          >
+            <div className={styles.content}>
+              <span>{popupMessage}</span>
+              <button onClick={onClose} className={styles.botao}>
+                Fechar
+              </button>
             </div>
-            <button onClick={handleClose} className={style.botao}>
-              Fechar
-            </button>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
