@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { useRouter } from 'next/navigation';
 
 const Students = () => {
 
     //Estado API
     const [dados, setDados] = useState([])
     const [students, setStudents] = useState([])
+    const router = useRouter();
 
     //Estado das propriedades
     const [name, setName] = useState('')
@@ -28,7 +30,7 @@ const Students = () => {
             console.error("Error submitting data:", error);
         }
     };
-    
+
     //Effect API
     useEffect(() => {
         async function fetchStudents() {
@@ -40,7 +42,7 @@ const Students = () => {
                 console.error("Error fetching data:", error);
             }
         }
-        
+
         fetchStudents();
     }, [students]);
 
@@ -51,53 +53,85 @@ const Students = () => {
         setDescription('')
     }
 
+    //Função PUT e DELETE
+    const deletar = async (id) => {
+        const url = `/api/students/${id}`;
+        try {
+            await axios.delete(url);
+            setDados(dados.filter((card) => card.id !== id));
+            setCards(cards.filter((card) => card.id !== id))
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+
+    const update = async (id) => {
+        router.push(`/Students/${id}`);
+    };
+
     return (
         <>
             <Header />
             <main className={styles.main}>
                 <div className={styles.register}>
-                <section className={styles.registerTitle}>
-                <h1 className={styles.title}>STUDENTS</h1>
-                </section>
+                    <section className={styles.registerTitle}>
+                        <h1 className={styles.title}>STUDENTS</h1>
+                    </section>
                     <input
-                    className={styles.input}
+                        className={styles.input}
                         type="text"
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     <input
-                    className={styles.input}
+                        className={styles.input}
                         type="text"
                         placeholder="Age"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
                     />
                     <input
-                    className={styles.input}
+                        className={styles.input}
                         type="text"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
-                    className={styles.input}
+                        className={styles.input}
                         type="text"
                         placeholder="Description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
-                    <button className={styles.button} type="submit" onClick={handleSubmit}>CRIAR</button>
+                    <button className={styles.button} type="submit" onClick={handleSubmit}>Registrar</button>
                 </div>
                 <div className={styles.map}>
                     {
                         dados ? (
                             students.map((student) => (
                                 <div key={student.id} className={styles.cards}>
-                                    <p>{student.name}</p>
-                                    <p>{student.age}</p>
-                                    <p>{student.email}</p>
-                                    <p>{student.description}</p>
+                                    <label className={styles.label}>
+                                        <p className={styles.p}>Nome:</p>
+                                        <p><strong>{student.name}</strong></p>
+                                    </label>
+                                    <label className={styles.label}>
+                                        <p className={styles.p}>Idade:</p>
+                                        <p><strong>{student.age}</strong></p>
+                                    </label>
+                                    <label className={styles.label}>
+                                        <p className={styles.p}>Email:</p>
+                                        <p><strong>{student.email}</strong></p>
+                                    </label>
+                                    <label className={styles.label}>
+                                        <p className={styles.p}>Descrição:</p>
+                                        <p><strong>{student.description}</strong></p>
+                                    </label>
+                                    <div className={styles.actions}>
+                                        <button className={styles.btnActions} onClick={() => update(student.id)}>Editar</button>
+                                        <button className={styles.btnActions} onClick={() => deletar(student.id)}>Deletar</button>
+                                    </div>
                                 </div>
                             ))
                         ) : (
