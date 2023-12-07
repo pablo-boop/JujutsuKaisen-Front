@@ -148,7 +148,7 @@ const Detalhes = () => {
                                                 transition={{ type: "spring", stiffness: 100 }}
                                                 className={styles.cardMap}
                                             >
-                                                <Cards name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} level={cards.level}/>
+                                                <Cards className={styles.all} name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} level={cards.level} />
                                                 <div className={styles.actions}>
                                                     <motion.button onClick={() => update(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
                                                     <motion.button onClick={() => deletar(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
@@ -158,7 +158,7 @@ const Detalhes = () => {
                                     }
                                 </div>
                             ) : (
-                                <p>Carregando API...</p>
+                                <img src="/gozo-unscreen.gif" />
                             )
                         }
                     </div>

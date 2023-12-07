@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 
 const Cards = ({name, img, typeDesc, description, atk, def, level}) => {
     return (
-        <div className={styles.box}>
+        <div className={styles.box} >
             <div className={styles.frontCard}>  {/*Frente da carta*/}
                 <div className={styles.overlapGroup}>
                     <div className={styles.card} />{/*carta*/}
