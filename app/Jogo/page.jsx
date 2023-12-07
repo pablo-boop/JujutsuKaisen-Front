@@ -95,17 +95,11 @@ function Jogo() {
             //         </div>
             //     </div>
             // </main>
-                <div className={styles.deck1}>
+                <div className={styles.cards}>
                     {
-                        player1Deck ? (
-                            player1Deck.map((card) => (
-                            <div key={card.uuid}>
-                                <Cards classEdit={styles.cardsGame} name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} level={card.level}/>
-                            </div>
-                            ))
-                        ) : (
-                            <p>Carregando API...</p>
-                        )
+                        player1Deck.map ((card) => (
+                            <Cards classEdit={styles.deck1} name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def}/>
+                        ))
                     }
                 </div>
             );

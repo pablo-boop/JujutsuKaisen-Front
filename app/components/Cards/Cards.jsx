@@ -5,7 +5,7 @@ const Cards = ({ name, img, typeDesc, description, atk, def, level, classEdit })
         <div className={classEdit}>
             <div className={styles.geral}>
                 <div className={styles.up}>
-                    {name}
+                    <h3 className={styles.nameTitle}>{name}</h3>
                 </div>
                 <div className={styles.bg}>
                     <img className={styles.bgImg} src={img} alt="background image" />
@@ -16,9 +16,9 @@ const Cards = ({ name, img, typeDesc, description, atk, def, level, classEdit })
                         <h2 className={styles.titleDesc}>{typeDesc}</h2>
                         <p className={styles.description}>{description}</p>
                     </label>
-                </div>
                 <div className={styles.properties}>
                     <h3 className={styles.atkDef}>{atk} / {def}</h3>
+                </div>
                 </div>
             </div>
         </div>

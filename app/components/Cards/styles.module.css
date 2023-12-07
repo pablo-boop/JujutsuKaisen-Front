@@ -1,43 +1,101 @@
 .geral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 15vw;
     height: 20vw;
+    padding: 1rem;
 }
 
 .up {
+    display: flex;
+    align-items: center;
+    justify-content: start;
     background-color: #1e1e1e;
     border-radius: 0.3rem;
-    
+    padding: 0.4rem;
+    width: 90%;
+}
+
+.nameTitle {
+    color: #e6e6e6;    
+    font-family: jujutsu;
+    font-size: 15px;
 }
 
 .bg {
-
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    height: 100%;
 }
 
 .bgImg {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    filter: blur(1.5px);
 }
 
 .img {
-
+    display: flex;
+    align-items: last baseline;
+    justify-content: start;
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
 }
 
 .infos {
-
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    width: 90%;
+    background-color: #1e1e1e;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    gap: 0.5rem;
 }
 
 .titleDesc {
-
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: #e6e6e6;
+    font-family: jujutsu;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
 }
 
 .description {
-
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: #e6e6e6;
+    font-family: jujutsu;
+    font-size: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .properties {
+    display: flex;
+    align-items: baseline;
+    justify-content: end;
+    color: #e6e6e6;
+    font-family: jujutsu;
+    font-size: 20px;
 
 }
 
 .atkDef {
+    font-family: jujutsu;
 
 }
 
