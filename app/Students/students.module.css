@@ -153,4 +153,8 @@
     .main{
         flex-direction: column;
     }
+
+    .input{
+        width: 16.5rem;
+    }
 }
