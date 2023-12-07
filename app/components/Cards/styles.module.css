@@ -58,6 +58,7 @@
     align-items: baseline;
     justify-content: center;
     width: 90%;
+    height: auto;
     background-color: #1e1e1e;
     border-radius: 0.3rem;
     padding: 1rem;
@@ -101,5 +102,5 @@
 
 @font-face {
     font-family: jujutsu;
-    src: url('/public/jujutsu.ttf');
+    src: url('../../../public/jujutsu.ttf');
 }

@@ -75,34 +75,52 @@ function Jogo() {
     }, [player1Life, player2Life]);
 
     return (
-            // <main className={styles.main}>
-            //     <div className={styles.box}>
-            //         <div className={styles.group}>
-            //             <div className={styles.overlap}>
-            //                 <img className={styles.purple} alt="Purple" src={'/vazio1.png'} />
-            //                 <img className={styles.background} alt="Background" src={'/background.png'} />
-            //                 <div className={styles.div}>
-            //                 <div className={styles.overlapGroup}>
-            //                     <div className={styles.group2} />
-            //                     <div className={styles.group3} />
-            //                 </div>
-            //                 <div className={styles.overlap2}>
-            //                     <div className={styles.group4} />
-            //                     <div className={styles.group3} />
-            //                 </div>
-            //             </div>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </main>
-                <div className={styles.cards}>
+        <main className={styles.main}>
+            <section className={styles.battlefield}>
+                <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
+                <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
+                <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
+            </section>
+            <section className={styles.table}>
+                <div className={styles.deck2}>
                     {
-                        player1Deck.map ((card) => (
-                            <Cards classEdit={styles.deck1} name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def}/>
+                        player2Deck.map((card) => (
+                            <div key={card.uuid}>
+                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                            </div>
                         ))
                     }
                 </div>
-            );
-        }
+                <div className={styles.battleCenter}>
+                    <div className={styles.card1}>
+
+                    </div>
+                    <div className={styles.actions}>
+                        <button className={styles.battleBtn}>Batalhar</button>
+                    </div>
+                    <div className={styles.card2}>
+
+                    </div>
+                </div>
+                <div className={styles.deck1}>
+                    {
+                        player1Deck.map((card) => (
+                            <div key={card.uuid}>
+                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </main>
+        // <div className={styles.cards}>
+        //     {
+        //         player1Deck.map ((card) => (
+        //             <Cards classEdit={styles.deck1} name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def}/>
+        //         ))
+        //     }
+        // </div>
+    );
+}
 
 export default Jogo
