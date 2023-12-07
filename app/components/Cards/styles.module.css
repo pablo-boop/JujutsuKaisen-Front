@@ -104,3 +104,22 @@
     font-family: jujutsu;
     src: url('../../../public/jujutsu.ttf');
 }
+
+@media only screen and (max-width: 600px){
+    .box{
+        width: 20rem;
+        height: 15rem;
+        margin-bottom: 13rem;
+    }
+
+    .box .overlapGroup {
+        height: 26rem;
+        width: 10rem;
+    }
+
+    .box .frontCard {
+        height: 26rem;
+        width: -0rem;
+    }
+   
+}
