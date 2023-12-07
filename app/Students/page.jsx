@@ -43,7 +43,7 @@ const Students = () => {
         
         fetchStudents();
     }, [students]);
-    
+
     const clean = () => {
         setName('')
         setAge('')
@@ -93,7 +93,7 @@ const Students = () => {
                     {
                         dados ? (
                             students.map((student) => (
-                                <div key={student.id}>
+                                <div key={student.id} className={styles.cards}>
                                     <p>{student.name}</p>
                                     <p>{student.age}</p>
                                     <p>{student.email}</p>

@@ -56,7 +56,8 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
-    height: 90vh;
+    max-height: 70vh;
+    overflow-y: auto;
     gap: 5rem;
     padding: 2rem;
 }
@@ -97,6 +98,16 @@
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    color: #e6e6e6;
 }
 
 @font-face {
