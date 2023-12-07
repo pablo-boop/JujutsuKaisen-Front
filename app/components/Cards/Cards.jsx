@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-const Cards = ({name, img, typeDesc, description, atk, def, level}) => {
+const Cards = ({ name, img, typeDesc, description, atk, def, level, classEdit }) => {
     return (
         <div className={styles.box} >
             <div className={styles.frontCard}>  {/*Frente da carta*/}

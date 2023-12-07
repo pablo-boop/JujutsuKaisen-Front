@@ -7,13 +7,19 @@ import Footer from '../components/Footer/Footer';
 import Cards from '../components/Cards/Cards';
 
 function Jogo() {
+    //API
     const [dados, setDados] = useState([]);
+
+    //Decks and Players
     const [player1Deck, setPlayer1Deck] = useState([]);
     const [player2Deck, setPlayer2Deck] = useState([]);
     const [selectedCard1, setSelectedCard1] = useState(null);
     const [selectedCard2, setSelectedCard2] = useState(null);
     const [player1Life, setPlayer1Life] = useState(5);
     const [player2Life, setPlayer2Life] = useState(5);
+
+    //HandleEvents
+    const [draggedCard, setDraggedCard] = useState(null);
 
     useEffect(() => {
         async function fetchCards() {
@@ -74,44 +80,51 @@ function Jogo() {
         }
     }, [player1Life, player2Life]);
 
+
     return (
-        <>
-            <Header />
-            <main className={styles.main}>
-                <div className={styles.deck1}>
+        <main className={styles.main}>
+            <section className={styles.battlefield}>
+                <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
+                <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
+                <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
+            </section>
+            <section className={styles.table}>
+                <div className={styles.deck2}>
                     {
-                        player1Deck ? (
-                            player1Deck.map((card) => (
-                            <div key={card.uuid}>
-                                <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} level={card.level}/>
+                        player2Deck.map((card) => (
+                            <div
+                                key={card.uuid}
+                                className={styles.cardChoose}
+                            >
+                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
                             </div>
-                            ))
-                        ) : (
-                            <p>Carregando API...</p>
-                        )
+                        ))
                     }
                 </div>
-                <div className={styles.box}>
-                    <div className={styles.group}>
-                        <div className={styles.overlap}>
-                            <img className={styles.purple} alt="Purple" src={'/vazio1.png'} />
-                            <img className={styles.background} alt="Background" src={'/background.png'} />
-                            <div className={styles.div}>
-                            <div className={styles.overlapGroup}>
-                                <div className={styles.group2} />
-                                <div className={styles.group3} />
-                            </div>
-                            <div className={styles.overlap2}>
-                                <div className={styles.group4} />
-                                <div className={styles.group3} />
-                            </div>
-                        </div>
-                        </div>
+                <div className={styles.battleCenter}>
+                    <div className={styles.card1}>
+
+                    </div>
+                    <div className={styles.actions}>
+                        <button className={styles.battleBtn}>Batalhar</button>
+                    </div>
+                    <div className={styles.card2}>
+
                     </div>
                 </div>
-            </main>
-            <Footer />
-        </>
+                <div className={styles.deck1}>
+                    {
+                        player1Deck.map((card) => (
+                            <div
+                                key={card.uuid}
+                                className={styles.cardChoose}>
+                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+        </main>
     );
 }
 

@@ -53,7 +53,33 @@
     transition: transform 0.25s ease-out;
 }
 
-.ul a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.ul :hover {
+    color: #ad2621e2;
 }
+
+
+@media (max-width:768px) {
+    .header {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+ 
+   .header img {
+     margin-left: 2rem;
+     height: 5rem;
+     width: 5rem;
+   }
+ 
+   .img  img{
+     align-content: center;
+     margin: 0 auto;
+     height: 4.5rem;
+     width: 9.5rem;
+     margin-right: 1rem;
+   }
+
+   .nav {
+    margin-right: 2rem;
+   }
+ }

@@ -1,34 +1,37 @@
 "use client"
+
 import React, { useState } from 'react';
 import Popup from '../components/PopUp/PopUp';
 
 const App = () => {
-  const [showPopup, setShowPopup] = useState(true);
-  const [popUpMessage, setPopUpMessage] = useState('');
-  const [popUpType, setPopUpType] = useState ('');
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupBackground, setPopupBackground] = useState('');
+  const [popupMessage, setPopupMessage] = useState('');
 
-  function handleShowPopUp (text, type, time){
-    setPopUpMessage(text);
-    setPopUpType(type);
-    setShowPopup (true);
-    setTimeout (() => {
-      setShowPopup (false)
-    }, time)
-  }
+  const togglePopup = (background, message) => {
+    setShowPopup(true);
+    setPopupBackground(background);
+    setPopupMessage(message);
+
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+
+  };
 
   return (
-    <div className="App">
-      <button onClick={() => handleShowPopUp ('Voce Ganhou!', 'victory')}>
-        Mensagem de Vitória
-      </button>
-      <button onClick={() => handleShowPopUp ('Voce Perdeu!', 'lose')}>
-        Mensagem de Derrota
-      </button>
-      <button onClick={() => handleShowPopUp ('Empate!', 'gameTied')}>
-        Mensagem de Empate
-      </button>
+    <div>
+      <button onClick={() => togglePopup('url(https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif)', 'Voce ganhou!')}>Vitória</button>
+      <button onClick={() => togglePopup('url(https://media1.tenor.com/m/iEvzToGb7W0AAAAC/nanami-shigemo.gif)', 'Voce perdeu!')}>Derrota</button>
+      <button onClick={() => togglePopup('url(https://media1.tenor.com/m/m1arMEn09NcAAAAd/todo-aoi-todo.gif)', 'Empate!')}>Empate</button>
 
-       { <Popup showPopup={showPopup} text={popUpMessage} type={popUpType} /> }
+      <Popup
+        showPopup={showPopup}
+        popupBackground={popupBackground}
+        popupMessage={popupMessage}
+        onClose={closePopup}
+      />
     </div>
   );
 };

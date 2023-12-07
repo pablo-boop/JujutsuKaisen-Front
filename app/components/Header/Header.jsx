@@ -31,7 +31,8 @@ const Header = () => {
             <nav className={styles.nav}>
                 {/*lista de links para as outras páginas*/}
                 <ul className={styles.ul}>
-                    <li><Link href={'/Detalhes'}>Detalhes</Link></li>
+                    <li><Link href={'/Cards'}>Cartas</Link></li>
+                    <li><Link href={'/Students'}>Estudantes</Link></li>
                     <li><Link href={'/Jogo'}>Jogo</Link></li>
                     <li><Link href={'/S'}>S</Link></li>
                     <li><Link href={'/Contato'}>Contato</Link></li>

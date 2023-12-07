@@ -48,7 +48,8 @@ export default function UpdateStudent({ params }) {
 
     console.log(dados);
 
-    const atualizarCard = () => {
+    const atualizarCard = (e) => {
+        e.preventDefault();
         axios
             .put(`/api/cards/${id}`, {
                 name: name,
