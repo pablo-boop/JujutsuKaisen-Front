@@ -75,43 +75,44 @@ function Jogo() {
     }, [player1Life, player2Life]);
 
     return (
-        <main className={styles.main}>
-            <div className={styles.deck1}>
-                {
-                    player1deck ? (
-                        player1deck.map((card) => (
-                        <div key={card.uuid}>
-                            <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} level={card.level}/>
+        <>
+            <Header />
+            <main className={styles.main}>
+                <div className={styles.deck1}>
+                    {
+                        player1Deck ? (
+                            player1Deck.map((card) => (
+                            <div key={card.uuid}>
+                                <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} level={card.level}/>
+                            </div>
+                            ))
+                        ) : (
+                            <p>Carregando API...</p>
+                        )
+                    }
+                </div>
+                <div className={styles.box}>
+                    <div className={styles.group}>
+                        <div className={styles.overlap}>
+                            <img className={styles.purple} alt="Purple" src={'/vazio1.png'} />
+                            <img className={styles.background} alt="Background" src={'/background.png'} />
+                            <div className={styles.div}>
+                            <div className={styles.overlapGroup}>
+                                <div className={styles.group2} />
+                                <div className={styles.group3} />
+                            </div>
+                            <div className={styles.overlap2}>
+                                <div className={styles.group4} />
+                                <div className={styles.group3} />
+                            </div>
                         </div>
-                        ))
-                    ) : (
-                        <p>Carregando API...</p>
-                    )
-                }
-            </div>
-            <div className={styles.box}>
-                <div className={styles.group}>
-                    <div className={styles.overlap}>
-                        <img className={styles.purple} alt="Purple" src={'/vazio1.png'} />
-                        <img className={styles.background} alt="Background" src={'/background.png'} />
-                        <div className={styles.div}>
-                        <div className={styles.overlapGroup}>
-                            <div className={styles.group2} />
-                            <div className={styles.group3} />
                         </div>
-                        <div className={styles.overlap2}>
-                            <div className={styles.group4} />
-                            <div className={styles.group3} />
-                        </div>
-                    </div>
                     </div>
                 </div>
-            </div>
-            <div className={styles.deck2}>
-
-            </div>
-        </main>
+            </main>
+            <Footer />
+        </>
     );
 }
 
-export default jogo
+export default Jogo
