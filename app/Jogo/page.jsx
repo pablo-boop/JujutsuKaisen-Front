@@ -7,13 +7,19 @@ import Footer from '../components/Footer/Footer';
 import Cards from '../components/Cards/Cards';
 
 function Jogo() {
+    //API
     const [dados, setDados] = useState([]);
+
+    //Decks and Players
     const [player1Deck, setPlayer1Deck] = useState([]);
     const [player2Deck, setPlayer2Deck] = useState([]);
     const [selectedCard1, setSelectedCard1] = useState(null);
     const [selectedCard2, setSelectedCard2] = useState(null);
     const [player1Life, setPlayer1Life] = useState(5);
     const [player2Life, setPlayer2Life] = useState(5);
+
+    //HandleEvents
+    const [draggedCard, setDraggedCard] = useState(null);
 
     useEffect(() => {
         async function fetchCards() {
@@ -74,6 +80,7 @@ function Jogo() {
         }
     }, [player1Life, player2Life]);
 
+
     return (
         <main className={styles.main}>
             <section className={styles.battlefield}>
@@ -85,7 +92,10 @@ function Jogo() {
                 <div className={styles.deck2}>
                     {
                         player2Deck.map((card) => (
-                            <div key={card.uuid}>
+                            <div
+                                key={card.uuid}
+                                className={styles.cardChoose}
+                            >
                                 <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
                             </div>
                         ))
@@ -105,7 +115,9 @@ function Jogo() {
                 <div className={styles.deck1}>
                     {
                         player1Deck.map((card) => (
-                            <div key={card.uuid}>
+                            <div
+                                key={card.uuid}
+                                className={styles.cardChoose}>
                                 <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
                             </div>
                         ))
@@ -113,13 +125,6 @@ function Jogo() {
                 </div>
             </section>
         </main>
-        // <div className={styles.cards}>
-        //     {
-        //         player1Deck.map ((card) => (
-        //             <Cards classEdit={styles.deck1} name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def}/>
-        //         ))
-        //     }
-        // </div>
     );
 }
 
