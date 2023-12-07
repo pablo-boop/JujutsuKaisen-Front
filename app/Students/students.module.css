@@ -1,13 +1,9 @@
 .main {
     display: flex;
-    
     align-items: center;
     justify-content: space-around;
     background-color: #1e1e1e;
-    height: 75vh;
-}
-.h1, .h2 {
-    color: #e6e6e6;
+    height: 100vh;
 }
 
 .register {
@@ -16,72 +12,93 @@
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
+    padding: 1rem;
+    -webkit-box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    box-shadow: -11px 10px 26px -11px rgba(0, 0, 0, 0.5);
+    border-radius: 0.4rem;
 }
-.gif{
-    padding: 0;
-    margin: 0;
-    margin-left: -15vw;
 
-}
-
-.inp {
-    width: 15vw;
-    height: 6.5vh;
+.input {
+    width: 30vw;
+    height: 5vh;
     border: none;
     padding: 0.5rem;
     background-color: #e6e6e6;
     border-radius: 0.3rem;
-    margin-left: 0.8vw;
-    margin-right: 0.8vw;
 }
 
-.select {
-    appearance: none;
-    -webkit-appearance: none;
+
+.button {
+    margin: 1rem;
     width: 30vw;
     height: 5vh;
-    padding: 0.675em 6em 0.675em 1em;
-    border-radius: 0.3rem;
-    cursor: pointer;
-}
-.sec{
-   
-    padding: 1rem;
-
-}
-.card{
-    background-color: rgb(50, 50, 50);
-    border-radius: 1rem;
-    margin-left: -30vw;
-}
-.h1{
-    margin-left: 13.5vw;
-    margin-top: 1vh;
-    font-family: jujutsu;
-}
-.left{
-    margin-left: 2vw;
-    margin-right: 2vw;
-    color: white;
-    max-height: 30%;
-    overflow-y: auto;
-}
-.gif2{
-    margin-left: -25vw;
-    margin-right: -10vw;
-}
-.butt {
-    margin: 1rem;
-    width: 31.75vw;
-    height: 5.9vh;
-    font-size: large;
-    font-family: jujutsu;
     border: none;
     background-color: #4F0909;
     color: #e6e6e6;
     border-radius: 0.3rem;
-    margin-left: 2vw;
 }
+
+.registerTitle {
+    margin: 1rem;
+    border-bottom: 2px solid #4F0909;
+}
+
+.title {
+    font-size: 30px;
+    color: #e6e6e6;
+    font-weight: 100;
+    font-family: jujutsu;
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 90vh;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.mappedCards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    gap: 0.3rem;
+}
+
+.mappedCards::-webkit-scrollbar {
+    width: 0.7rem;
+    padding: 1rem;
+    height: 5rem;
+}
+
+/* Track */
+.mappedCards::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #1f2937;
+}
+
+/* Handle */
+.mappedCards::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(79,9,9,1) 35%, rgba(230,230,230,1) 100%);
+    height: 5rem;
+    border-radius: 100vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
 @font-face {
     font-family: jujutsu;
     src: url('../../public/jujutsu.ttf');

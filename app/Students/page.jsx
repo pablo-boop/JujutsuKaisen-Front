@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import Cards from "../components/Cards/Cards";
 
 const Students = () => {
 
@@ -24,92 +23,88 @@ const Students = () => {
         try {
             const response = await axios.post("/api/students", { name, age, email, description });
             setStudents([...students, response.data.students]);
-            setName('')
-            setAge('')
-            setEmail('')
-            setDescription('')
+            clean()
         } catch (error) {
             console.error("Error submitting data:", error);
         }
     };
-
+    
     //Effect API
     useEffect(() => {
         async function fetchStudents() {
             try {
                 const response = await axios.get('/api/students');
-                setDados(response.data);
-                setStudents(response.data);
+                setDados(response.data.students);
+                setStudents(response.data.students);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         }
-
+        
         fetchStudents();
     }, [students]);
+    
+    const clean = () => {
+        setName('')
+        setAge('')
+        setEmail('')
+        setDescription('')
+    }
 
     return (
         <>
             <Header />
             <main className={styles.main}>
-                
-                <div className={styles.card}>
-                <section>
-                <h1 className={styles.h1}>STUDENTS</h1>
+                <div className={styles.register}>
+                <section className={styles.registerTitle}>
+                <h1 className={styles.title}>STUDENTS</h1>
                 </section>
-                <section>
-                <form onSubmit={handleSubmit}>
-                    <section className={styles.sec}>
                     <input
-                    className={styles.inp}
+                    className={styles.input}
                         type="text"
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     <input
-                    className={styles.inp}
+                    className={styles.input}
                         type="text"
                         placeholder="Age"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
-                    /></section>
-                    <section className={styles.sec}>
+                    />
                     <input
-                    className={styles.inp}
+                    className={styles.input}
                         type="text"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
-                    className={styles.inp}
+                    className={styles.input}
                         type="text"
                         placeholder="Description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                    /></section>
-                    <button className={styles.butt} type="submit">CRIAR</button>
-                </form></section>
-                <div className={styles.left}>
+                    />
+                    <button className={styles.button} type="submit" onClick={handleSubmit}>CRIAR</button>
+                </div>
+                <div className={styles.map}>
                     {
                         dados ? (
-                            <div className={styles.map}>
-                                {
-                                    dados.map((student) => (
-                                        <div key={student.id}>
-                                            <p>{student.name}</p>
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                            students.map((student) => (
+                                <div key={student.id}>
+                                    <p>{student.name}</p>
+                                    <p>{student.age}</p>
+                                    <p>{student.email}</p>
+                                    <p>{student.description}</p>
+                                </div>
+                            ))
                         ) : (
-                            <p>Carregando API...</p>
+                            <p>Careegando API...</p>
                         )
                     }
                 </div>
-                </div>
-                
             </main>
             <Footer />
         </>
