@@ -148,3 +148,7 @@
     font-family: jujutsu;
     src: url('../../public/jujutsu.ttf');
 }
+
+@media only screen and (max-device-width: 600px){
+    
+}
