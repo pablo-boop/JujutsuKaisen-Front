@@ -1,7 +1,7 @@
 'use client'
 
 //Imports from style and components
-import styles from './detalhes.module.css'
+import styles from './cards.module.css'
 import { motion } from 'framer-motion';
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";

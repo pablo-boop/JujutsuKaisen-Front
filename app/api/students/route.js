@@ -2,13 +2,12 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 //obtem a URL
-const url = process.env.BASE_URL + "/students";
+const url = process.env.BASE_URL + '/students';
 
 //função que trata as requisições GET
 export async function GET() {
     try {
         const response = await axios.get(url);
-
         //retorna uma resposta para a próxima camada de aplicação com os dados recebidos
         return NextResponse.json(response.data);
     } catch (error) {
