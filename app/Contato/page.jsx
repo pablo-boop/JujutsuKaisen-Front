@@ -54,9 +54,9 @@ const contato = () => {
                     <section>
                     </section>
                     <section className={styles.sec}>
-                        <input placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} type="text" className={styles.inputs} />
-                        <input type="text" placeholder="E-mail" className={styles.inputs} value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <input type="text" placeholder="Comentario" className={styles.coment} value={comment} onChange={(e) => setComment(e.target.value)} />
+                        <input placeholder="Nome" value={name} required onChange={(e) => setName(e.target.value)} type="text" className={styles.inputs} />
+                        <input type="email" placeholder="E-mail" required className={styles.inputs} value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" placeholder="Comentario" required className={styles.coment} value={comment} onChange={(e) => setComment(e.target.value)} />
                         <motion.button
                          onClick={handleSubmit}
                          whileHover={{ scale: 1.1 }}
