@@ -1,22 +1,24 @@
 import styles from "./styles.module.css";
 
-const Cards = ({name, img, typeDesc, description, atk, def, level}) => {
+const Cards = ({ name, img, typeDesc, description, atk, def, level, classEdit }) => {
     return (
-        <div className={styles.box}>
-            <div className={styles.frontCard}>  {/*Frente da carta*/}
-                <div className={styles.overlapGroup}>
-                    <div className={styles.card} />{/*carta*/}
-                    <img className={styles.background} alt="Background" src={img} />  {/*imagem de fundo da carta*/}
-                    <img className={styles.img} alt="Img" src={img} />  {/*imagem principal da carta*/}
-                    <div className={styles.infos} />  {/*informações*/}
-                    <div className={styles.upInfo} />
-                    <div className={styles.itadoriYuji}>{name}</div>  {/*nome do personagem*/}
-                    <div className={styles.ASDASDA}>  {/*nível e descrição do personagem*/}
-                        {typeDesc} :
-                        <br />
-                        {description}
-                    </div>
-                    <div className={styles.textWrapper}>{atk} / {def}</div>
+        <div className={classEdit}>
+            <div className={styles.geral}>
+                <div className={styles.up}>
+                    {name}
+                </div>
+                <div className={styles.bg}>
+                    <img className={styles.bgImg} src={img} alt="background image" />
+                    <img className={styles.img} src={img} alt="imagem personagem" />
+                </div>
+                <div className={styles.infos}>
+                    <label>
+                        <h2 className={styles.titleDesc}>{typeDesc}</h2>
+                        <p className={styles.description}>{description}</p>
+                    </label>
+                </div>
+                <div className={styles.properties}>
+                    <h3 className={styles.atkDef}>{atk} / {def}</h3>
                 </div>
             </div>
         </div>

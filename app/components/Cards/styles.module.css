@@ -1,121 +1,47 @@
-.box {
-    height: 26.875rem;
-    width: 23.1875rem;
+.geral {
+    width: 15vw;
+    height: 20vw;
 }
 
-.box .frontCard {
-    height: 26.875rem;
-    left: 0;
-    top: 0;
-    width: 23.625rem;
-}
-
-.box .overlapGroup {
-    height: 26.875rem;
-    position: relative;
-    width: 23.1875rem;
-}
-
-.box .card {
-    background-color: #d9d9d9;
-    border: 2px solid;
-    border-color: #000000;
-    border-radius: 0.5rem;
-    height: 26.875rem;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 20rem;
-}
-
-.box .background {
-    height: 25rem;
-    left: 0rem;
-    mix-blend-mode: overlay;
-    object-fit: fill;
-    position: absolute;
-    top: 0rem;
-    width: 20rem;
-}
-
-.box .img {
-    height: 18rem;
-    left: 0.5rem;
-    position: absolute;
-    top: 4.5rem;
-    width: 14rem;
-}
-
-.box .infos {
-    background-color: #0a0a0ae6;
-    box-shadow: 0px 0.25rem 0.25rem #00000040;
-    height: 9.4375rem;
-    left: 1.3125rem;
-    position: absolute;
-    top: 15.75rem;
-    width: 17.6875rem;
+.up {
+    background-color: #1e1e1e;
     border-radius: 0.3rem;
+    
 }
 
-.box .upInfo {
-    background-color: #0a0a0ae6;
-    box-shadow: 0px 0.25rem 0.25rem #00000040;
-    height: 2rem;
-    left: 1.375rem;
-    position: absolute;
-    top: 1.375rem;
-    width: 17rem;
-    border-radius: 0.3rem;
+.bg {
+
 }
 
-.box .itadoriYuji {
-    color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 1.25rem;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 1.5rem;
-    white-space: nowrap;
-    width: 11.5625rem;
-    font-family: jujutsu;
+.bgImg {
+
 }
 
-.box .ASDASDA {
-    color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 1.25rem;
-    font-weight: 400;
-    height: 5.8125rem;
-    left: 1.9375rem;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 16.5rem;
-    width: 15.8125rem;
-    font-size: 15px;
+.img {
+
 }
 
-.box .textWrapper {
-    color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
-    font-size: 1.875rem;
-    font-weight: 400;
-    left: 10rem;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 22.3125rem;
-    white-space: nowrap;
-    width: 7.75rem;
-    font-family: jujutsu;
+.infos {
+
+}
+
+.titleDesc {
+
+}
+
+.description {
+
+}
+
+.properties {
+
+}
+
+.atkDef {
+
 }
 
 @font-face {
     font-family: jujutsu;
-    src: url('../../../public/jujutsu.ttf');
+    src: url('/public/jujutsu.ttf');
 }
