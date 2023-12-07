@@ -84,10 +84,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: first baseline;
     width: 80%;
-    height: 100%;
+    height: 90vh;
     gap: 5rem;
+    padding: 2rem;
 }
 
 .searchBar {
@@ -111,9 +111,28 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-height: 80%;
+    height: 100vh;
     overflow-y: auto;
     gap: 0.3rem;
+}
+
+.mappedCards::-webkit-scrollbar {
+    width: 0.7rem;
+    padding: 1rem;
+    height: 5rem;
+}
+
+/* Track */
+.mappedCards::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #1f2937;
+}
+
+/* Handle */
+.mappedCards::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(79,9,9,1) 35%, rgba(230,230,230,1) 100%);
+    height: 5rem;
+    border-radius: 100vh;
 }
 
 .filters {
@@ -167,7 +186,9 @@
         padding: 1rem;
     }
 
-    .input, .select, .button {
+    .input,
+    .select,
+    .button {
         width: 50vw;
     }
 

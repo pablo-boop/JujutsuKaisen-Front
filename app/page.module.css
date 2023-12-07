@@ -37,7 +37,7 @@
 .imgLayout img{
     width: 40vw;
     height: 50vh;
-    
+    border-radius: 8px;
 
 }
 /*fonte da pagina*/
@@ -50,5 +50,6 @@
     .imgLayout img{
         width: 67vw;
         height: 27vh;
+        border-radius: 8px;
     }
 }

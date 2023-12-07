@@ -18,10 +18,12 @@
 .nav {
     margin-right: 20px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
 }
 
@@ -31,8 +33,25 @@
     list-style: none;
     text-decoration: none;
     font-size: 20px;
+    display: inline-block;
+    position: relative;
 }
 
+.ul a::after {
+    width: 2rem;
+    height: 0.5rem;
+    transition: 0.5s;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:#ad2621e2;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
 
 .ul :hover {
     color: #ad2621e2;

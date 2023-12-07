@@ -2,6 +2,8 @@
 import styles from "./contato.module.css"
 import { motion } from 'framer-motion';
 import { useState } from "react";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 
 
 const contato = () => {
@@ -29,6 +31,8 @@ const contato = () => {
     }
 
     return (
+        <>
+        <Header /> 
         <div className={styles.geral}>
             <motion.img
                 src="https://i.pinimg.com/originals/7f/a2/43/7fa243b1a78cc227e3fed2d878cfecc8.gif"
@@ -61,7 +65,8 @@ const contato = () => {
                     </section>
                 </div>
             </div>
-            <Footer />
+        </div>
+        <Footer />
         </>
     )
 }
