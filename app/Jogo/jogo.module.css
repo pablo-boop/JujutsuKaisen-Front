@@ -140,3 +140,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.bgCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 15vw;
+    height: 50vh;
+    object-fit: contain;
+    background-color: #1e1e1e;
+    border-radius: 0.3rem;
+}

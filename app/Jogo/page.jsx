@@ -162,6 +162,7 @@ function Jogo() {
                                 <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
                             ))}
                         </div>
+                        <div className={styles.bgCard}>
                         {selectedCard1 && (
                             <Cards
                                 classEdit={styles.deck1}
@@ -173,6 +174,7 @@ function Jogo() {
                                 def={selectedCard1.def}
                             />
                         )}
+                        </div>
                     </div>
                     <div className={styles.actions}>
                         <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
@@ -184,6 +186,7 @@ function Jogo() {
                                 <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
                             ))}
                         </div>
+                        <div className={styles.bgCard}>
                         {selectedCard2 && (
                             <Cards
                                 classEdit={styles.deck1}
@@ -195,6 +198,7 @@ function Jogo() {
                                 def={selectedCard2.def}
                             />
                         )}
+                        </div>
                     </div>
                 </div>
                 <div className={styles.deck1}>
