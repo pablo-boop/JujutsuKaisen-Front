@@ -130,9 +130,11 @@
    
 }
 .fecha{
+    margin-left: 12.7rem;
     height: 1.3rem;
     width: 1.3rem;
-    margin-left: 12.7rem;
+    border: none;
+    background-color: rgb(0, 0, 198);
 }
 .war{
     height: 2.1rem;
