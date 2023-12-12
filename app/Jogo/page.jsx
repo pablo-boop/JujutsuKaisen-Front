@@ -41,6 +41,7 @@ function Jogo() {
                 const deck2 = generateDeck(response.data.cards.filter(card => !deck1.includes(card)));
                 setPlayer1Deck(deck1);
                 setPlayer2Deck(deck2);
+                balance()
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -63,6 +64,26 @@ function Jogo() {
         }
 
         return deck;
+    }
+
+    const recreateDecks = () => {
+        const newPlayer1Deck = generateDeck(dados);
+        const newPlayer2Deck = generateDeck(dados.filter(card => !newPlayer1Deck.includes(card)));
+        setPlayer1Deck(newPlayer1Deck);
+        setPlayer2Deck(newPlayer2Deck);
+    }
+    
+    const balance = () => {
+        player1Deck.forEach((card) => {
+            if (card.atk + card.def > 1000) {
+                recreateDecks();
+            }
+        });
+        player2Deck.forEach((card) => {
+            if (card.atk + card.def > 1000) {
+                recreateDecks();
+            }
+        });
     }
 
     const selectCard = (id, player) => {
@@ -93,10 +114,8 @@ function Jogo() {
     }
 
     useEffect(() => {
-        if (player1Life == 0) {
-            setShowPopup(true)
-        } else if (player2Life == 0) {
-            setShowPopup(true)
+        if (player1Life === 0 || player2Life === 0) {
+            setShowPopup(true);
         }
     }, [player1Life, player2Life]);
 
@@ -104,12 +123,16 @@ function Jogo() {
     return (
         <main className={styles.main}>
             <div className={styles.popUp}>
-                <Popup
-                    showPopup={showPopup}
-                    imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
-                    text="Você ganhou!"
-                    onClose={closePopup}
-                />
+                {
+                    showPopup && (
+                        <Popup
+                        showPopup={showPopup}
+                        imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
+                        text={player1Life === 0 ? "Player 2 Ganhou!" : "Player 1 Ganhou!"}
+                        onClose={closePopup}
+                    />
+                    )
+                }
             </div>
             <section className={styles.battlefield}>
                 <img className={styles.imgBattle} src={'../../background.png'} alt="background" />

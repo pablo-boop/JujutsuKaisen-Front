@@ -12,20 +12,22 @@ const App = () => {
 
   return (
     <div>
-      {/* Conteúdo da sua aplicação aqui */}
       <div>
-      <Popup
-        showPopup={showPopup}
-        imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
-        text="Você ganhou!"
-        onClose={closePopup}
-      />
-    </div>
+        {showPopup && (
+          <Popup
+            showPopup={showPopup}
+            imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
+            text="Você ganhou!"
+            onClose={closePopup}
+          />
+        )}
+      </div>
     </div>
   );
 };
 
 export default App;
+
 
 
 // togglePopup('url(https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif)', 'Voce ganhou!')
