@@ -13,76 +13,84 @@ function Jogo() {
     const route = useRouter();
 
     //Decks and Players
-    const [player1Deck, setPlayer1Deck] = useState([]);
-    const [player2Deck, setPlayer2Deck] = useState([]);
-    const [selectedCard1, setSelectedCard1] = useState(null);
-    const [selectedCard2, setSelectedCard2] = useState(null);
-    const [player1Life, setPlayer1Life] = useState(5);
-    const [player2Life, setPlayer2Life] = useState(5);
+const [player1Deck, setPlayer1Deck] = useState([]);
+const [player2Deck, setPlayer2Deck] = useState([]);
+const [selectedCard1, setSelectedCard1] = useState(null);
+const [selectedCard2, setSelectedCard2] = useState(null);
+const [player1Life, setPlayer1Life] = useState(5);
+const [player2Life, setPlayer2Life] = useState(5);
 
-    //HandleEvents
-    const [draggedCard, setDraggedCard] = useState(null);
+//HandleEvents
+const [draggedCard, setDraggedCard] = useState(null);
 
-    useEffect(() => {
-        async function fetchCards() {
-            try {
-                const response = await axios.get('/api/cards');
-                setDados(response.data.cards);
-                const deck1 = generateDeck(response.data.cards);
-                const deck2 = generateDeck(response.data.cards);
-                setPlayer1Deck(deck1);
-                setPlayer2Deck(deck2);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
+useEffect(() => {
+    async function fetchCards() {
+        try {
+            const response = await axios.get('/api/cards');
+            setDados(response.data.cards);
+            const deck1 = generateDeck(response.data.cards);
+            const deck2 = generateDeck(response.data.cards.filter(card => !deck1.includes(card)));
+            setPlayer1Deck(deck1);
+            setPlayer2Deck(deck2);
+        } catch (error) {
+            console.error("Error fetching data:", error);
         }
-
-        fetchCards();
-    }, []);
-
-    function generateDeck(cards) {
-        let deck = [];
-        for (let i = 0; i < 5; i++) {
-            const randomIndex = Math.floor(Math.random() * cards.length);
-            deck.push(cards[randomIndex]);
-        }
-        return deck;
     }
 
-    const selectCard = (id, player) => {
-        const deck = player == 1 ? player1Deck : player2Deck;
-        const card = deck.find(card => card.uuid === id);
-        if (player == 1) {
-            setSelectedCard1(card);
-        } else {
-            setSelectedCard2(card);
-        }
+    fetchCards();
+}, []);
 
-        console.log(selectedCard1, selectedCard2);
+function generateDeck(cards) {
+    let deck = [];
+    let usedCards = new Set();
+
+    while (deck.length < 5) {
+        const randomIndex = Math.floor(Math.random() * cards.length);
+        const selectedCard = cards[randomIndex];
+
+        if (!usedCards.has(selectedCard.uuid)) {
+            deck.push(selectedCard);
+            usedCards.add(selectedCard.uuid);
+        }
     }
 
-    const battle = () => {
-        if (!selectedCard1 || !selectedCard2) {
-            return;
-        }
-        if (selectedCard1.atk > selectedCard2.atk) {
-            setPlayer2Life(player2Life - 1);
-            setPlayer2Deck(player2Deck.filter(card => card.id !== selectedCard2.uuid));
-        } else {
-            setPlayer1Life(player1Life - 1);
-            setPlayer1Deck(player1Deck.filter(card => card.id !== selectedCard1.uuid));
-        }
-        setSelectedCard1(null);
-        setSelectedCard2(null);
+    return deck;
+}
+
+const selectCard = (id, player) => {
+    const deck = player == 1 ? player1Deck : player2Deck;
+    const card = deck.find(card => card.uuid === id);
+    if (player == 1) {
+        setSelectedCard1(card);
+    } else {
+        setSelectedCard2(card);
     }
 
-    useEffect(() => {
-        if (player1Life === 0) {
-            console.log("Player 2 won");
-        } else if (player2Life === 0) {
-            console.log("Player 1 won");
-        }
-    }, [player1Life, player2Life]);
+    console.log(selectedCard1, selectedCard2);
+}
+
+const battle = () => {
+    if (!selectedCard1 || !selectedCard2) {
+        return;
+    }
+    if (selectedCard1.atk > selectedCard2.atk) {
+        setPlayer2Life(player2Life - 1);
+        setPlayer2Deck(player2Deck.filter(card => card.id !== selectedCard2.uuid));
+    } else {
+        setPlayer1Life(player1Life - 1);
+        setPlayer1Deck(player1Deck.filter(card => card.id !== selectedCard1.uuid));
+    }
+    setSelectedCard1(null);
+    setSelectedCard2(null);
+}
+
+useEffect(() => {
+    if (player1Life === 0) {
+        console.log("Player 2 won");
+    } else if (player2Life === 0) {
+        console.log("Player 1 won");
+    }
+}, [player1Life, player2Life]);
 
 
     return (
