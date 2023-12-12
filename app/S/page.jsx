@@ -8,7 +8,7 @@ const App = () => {
   const [popupBackground, setPopupBackground] = useState('');
   const [popupMessage, setPopupMessage] = useState('');
 
-  //alternar
+  //alterna
   const togglePopup = (background, message) => {
     setShowPopup(true);
     setPopupBackground(background);
