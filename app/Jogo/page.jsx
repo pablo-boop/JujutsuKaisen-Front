@@ -23,31 +23,21 @@ function Jogo() {
     const [mp1, setMp1] = useState(0)
     const [mp2, setMp2] = useState(0)
 
-    useEffect(() => {
-        async function fetchCards() {
-            try {
-                const response = await axios.get('/api/cards');
-                setDados(response.data.cards);
-                const deck1 = generateDeck(response.data.cards);
-                const deck2 = generateDeck(response.data.cards);
-                setPlayer1Deck(deck1);
-                setPlayer2Deck(deck2);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
+useEffect(() => {
+    async function fetchCards() {
+        try {
+            const response = await axios.get('/api/cards');
+            setDados(response.data.cards);
+            const deck1 = generateDeck(response.data.cards);
+            const deck2 = generateDeck(response.data.cards.filter(card => !deck1.includes(card)));
+            setPlayer1Deck(deck1);
+            setPlayer2Deck(deck2);
+        } catch (error) {
+            console.error("Error fetching data:", error);
         }
-
-        fetchCards();
-    }, []);
-
-    function generateDeck(cards) {
-        let deck = [];
-        for (let i = 0; i < 5; i++) {
-            const randomIndex = Math.floor(Math.random() * cards.length);
-            deck.push(cards[randomIndex]);
-        }
-        return deck;
     }
+    fetchCards();
+}, []);
 
     const selectCard = (id, player) => {
         const deck = player == 1 ? player1Deck : player2Deck;
@@ -76,13 +66,13 @@ function Jogo() {
         setSelectedCard2(null);
     }
 
-    useEffect(() => {
-        if (player1Life === 0) {
-            console.log("Player 2 won");
-        } else if (player2Life === 0) {
-            console.log("Player 1 won");
-        }
-    }, [player1Life, player2Life]);
+useEffect(() => {
+    if (player1Life === 0) {
+        console.log("Player 2 won");
+    } else if (player2Life === 0) {
+        console.log("Player 1 won");
+    }
+}, [player1Life, player2Life]);
 
 
     return (
