@@ -75,10 +75,10 @@ const battle = () => {
     }
     if (selectedCard1.atk > selectedCard2.atk) {
         setPlayer2Life(player2Life - 1);
-        setPlayer2Deck(player2Deck.filter(card => card.id !== selectedCard2.uuid));
+        setPlayer2Deck(player2Deck.filter(card => card.uuid !== selectedCard2.uuid));
     } else {
         setPlayer1Life(player1Life - 1);
-        setPlayer1Deck(player1Deck.filter(card => card.id !== selectedCard1.uuid));
+        setPlayer1Deck(player1Deck.filter(card => card.uuid !== selectedCard1.uuid));
     }
     setSelectedCard1(null);
     setSelectedCard2(null);
@@ -128,7 +128,7 @@ useEffect(() => {
                         )}
                     </div>
                     <div className={styles.actions}>
-                        <button className={styles.battleBtn} onClick={() => battle}>Batalhar</button>
+                        <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
                         <button className={styles.battleBtn} onClick={() => route.push('/')}>Voltar</button>
                     </div>
                     <div className={styles.card2}>
