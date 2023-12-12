@@ -127,10 +127,12 @@
 .xis{
     height: 1.3rem;
     width: 1.3rem;
-    margin-left: 12.7rem;
+   
 }
 .fecha{
-    background-color: rgb(0, 0, 198);
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-left: 12.7rem;
 }
 .war{
     height: 2.1rem;
