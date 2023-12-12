@@ -19,9 +19,9 @@ function Jogo() {
     const [selectedCard2, setSelectedCard2] = useState(null);
     const [player1Life, setPlayer1Life] = useState(5);
     const [player2Life, setPlayer2Life] = useState(5);
-
-    //HandleEvents
-    const [draggedCard, setDraggedCard] = useState(null);
+    //Card media points
+    const [mp1, setMp1] = useState(0)
+    const [mp2, setMp2] = useState(0)
 
     useEffect(() => {
         async function fetchCards() {
@@ -54,23 +54,23 @@ function Jogo() {
         const card = deck.find(card => card.uuid === id);
         if (player == 1) {
             setSelectedCard1(card);
+            setMp1(card.atk + card.def)
         } else {
             setSelectedCard2(card);
+            setMp2(card.atk + card.def)
         }
-
-        console.log(selectedCard1, selectedCard2);
     }
 
     const battle = () => {
         if (!selectedCard1 || !selectedCard2) {
             return;
         }
-        if (selectedCard1.atk > selectedCard2.atk) {
+        if (mp1 > mp2) {
             setPlayer2Life(player2Life - 1);
-            setPlayer2Deck(player2Deck.filter(card => card.id !== selectedCard2.uuid));
+            setPlayer2Deck(player2Deck.filter(card => card.uuid !== selectedCard2.uuid));
         } else {
             setPlayer1Life(player1Life - 1);
-            setPlayer1Deck(player1Deck.filter(card => card.id !== selectedCard1.uuid));
+            setPlayer1Deck(player1Deck.filter(card => card.uuid !== selectedCard1.uuid));
         }
         setSelectedCard1(null);
         setSelectedCard2(null);
@@ -101,13 +101,13 @@ function Jogo() {
                                 className={styles.cardChoose}
                                 onClick={() => selectCard(card.uuid, 2)}
                             >
-                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                                <Cards name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
                             </div>
                         ))
                     }
                 </div>
                 <div className={styles.battleCenter}>
-                    <div className={styles.card1}>
+                    <div>
                         {selectedCard1 && (
                             <Cards
                                 classEdit={styles.deck1}
@@ -120,10 +120,10 @@ function Jogo() {
                         )}
                     </div>
                     <div className={styles.actions}>
-                        <button className={styles.battleBtn} onClick={() => battle}>Batalhar</button>
+                        <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
                         <button className={styles.battleBtn} onClick={() => route.push('/')}>Voltar</button>
                     </div>
-                    <div className={styles.card2}>
+                    <div>
                         {selectedCard2 && (
                             <Cards
                                 classEdit={styles.deck1}

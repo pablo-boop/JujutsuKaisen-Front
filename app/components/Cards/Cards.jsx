@@ -12,7 +12,7 @@ const Cards = ({ name, img, typeDesc, description, atk, def }) => {
                     <div className={styles.upInfo} />
                     <div className={styles.up}><h3 className={styles.nameTitle}>{name}</h3></div>  {/*nome do personagem*/}
                     <div className={styles.infos}>  {/*nível e descrição do personagem*/}
-                        <p className={styles.titleDesc}>{typeDesc} :</p>
+                        <p className={styles.titleDesc}>{typeDesc}:</p>
                         <br />
                         <p className={styles.description}>{description}</p>
                     </div>
