@@ -57,7 +57,7 @@
     color: #ad2621e2;
 }
 
-
+/*responsivade*/
 @media (max-width:768px) {
     .header {
      display: flex;
