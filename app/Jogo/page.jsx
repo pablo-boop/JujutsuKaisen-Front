@@ -82,49 +82,62 @@ function Jogo() {
 
 
     return (
-        <main className={styles.main}>
-            <section className={styles.battlefield}>
-                <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
-                <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
-                <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
-            </section>
-            <section className={styles.table}>
-                <div className={styles.deck2}>
-                    {
-                        player2Deck.map((card) => (
-                            <div
-                                key={card.uuid}
-                                className={styles.cardChoose}
-                            >
-                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
-                            </div>
-                        ))
-                    }
-                </div>
-                <div className={styles.battleCenter}>
-                    <div className={styles.card1}>
+        <div className={styles.all}>
+            <Header />
+            <main className={styles.main}>
 
+                <section className={styles.battlefield}>
+                    <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
+                    <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
+                    <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
+                </section>
+                <section className={styles.table}>
+                    <div className={styles.deck2}>
+                        {
+                            player2Deck.map((card) => (
+                                <div
+                                    key={card.uuid}
+                                    className={styles.cardChoose}
+                                >
+                                    <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                                </div>
+                            ))
+                        }
                     </div>
-                    <div className={styles.actions}>
-                        <button className={styles.battleBtn}>Batalhar</button>
-                    </div>
-                    <div className={styles.card2}>
+                    <div className={styles.battleCenter}>
+                        <div className={styles.card1}>
 
+                        </div>
+                        <div className={styles.actions}>
+                            <button className={styles.battleBtn}>Batalhar</button>
+                        </div>
+                        <div className={styles.card2}>
+
+                        </div>
                     </div>
-                </div>
-                <div className={styles.deck1}>
-                    {
-                        player1Deck.map((card) => (
-                            <div
-                                key={card.uuid}
-                                className={styles.cardChoose}>
-                                <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
-                            </div>
-                        ))
-                    }
-                </div>
-            </section>
-        </main>
+                    <div className={styles.deck1}>
+                        {
+                            player1Deck.map((card) => (
+                                <div
+                                    key={card.uuid}
+                                    className={styles.cardChoose}>
+                                    <Cards classEdit={styles.deck1} name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+                <section className={styles.hidden}>
+                    <div className={styles.blue}><h3>Error Error</h3><img src="./xizin.png" alt="xis" className={styles.xis}/></div>
+                    <div className={styles.d}>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
+                    <h5 className={styles.h22}>Esta página é feita para computadores</h5>
+                    </div>
+                    <button className={styles.butt}>Ok</button>
+                </section>
+            </main>
+            <Footer className={styles.foot} />
+        </div>
     );
 }
 
