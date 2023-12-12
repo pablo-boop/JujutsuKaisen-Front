@@ -21,6 +21,15 @@ function Jogo() {
     //HandleEvents
     const [draggedCard, setDraggedCard] = useState(null);
 
+
+        const [isVisible, setIsVisible] = useState(true); // Estado para controlar a visibilidade da div
+      
+        // Função para fechar a div (altera o estado para tornar a div invisível)
+        const fecharDiv = () => {
+          setIsVisible(false);
+        };
+
+
     useEffect(() => {
         async function fetchCards() {
             try {
@@ -72,6 +81,20 @@ function Jogo() {
         setSelectedCard2(null);
     }
 
+    const resp = () => {
+        const [setShowPopup] = useState(false);
+
+        const div = () => {
+          setShowPopup(true);
+      
+        };
+      
+        const closePopup = () => {
+          setShowPopup(false);
+      
+        };
+    }
+
     useEffect(() => {
         if (player1Life === 0) {
             console.log("Player 2 won");
@@ -79,7 +102,6 @@ function Jogo() {
             console.log("Player 1 won");
         }
     }, [player1Life, player2Life]);
-
 
     return (
         <div className={styles.all}>
@@ -127,14 +149,23 @@ function Jogo() {
                         }
                     </div>
                 </section>
-                <section className={styles.hidden}>
-                    <div className={styles.blue}><h3>Error Error</h3><img src="./xizin.png" alt="xis" className={styles.xis}/></div>
+            
+    
+               <div>
+                {isVisible && (
+                    <section className={styles.hidden}>
+                    <div className={styles.blue}>
+                        <h3>Error Error</h3>   
+                        <button className={styles.fecha} onClick={fecharDiv}><img src="./xizin.png" alt="xis" className={styles.xis}/></button>
+                    </div>
                     <div className={styles.d}>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
                     <h5 className={styles.h22}>Esta página é feita para computadores</h5>
                     </div>
                     <button className={styles.butt}>Ok</button>
                 </section>
+                )}
+                </div>
             </main>
             <Footer className={styles.foot} />
         </div>

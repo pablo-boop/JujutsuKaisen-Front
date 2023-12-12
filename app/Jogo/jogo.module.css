@@ -123,12 +123,14 @@
     margin: 0;
     padding: 0.1rem;
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif';
 }
 .xis{
     height: 1.5rem;
     width: 1.5rem;
     margin-left: 11.85rem;
+}
+.fecha{
+    background-color: rgb(0, 0, 198);
 }
 .war{
     height: 2.1rem;
@@ -171,7 +173,7 @@ box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.66);
     .h22 {
         font-size: 0.75rem;
        margin: 1.1rem;
-       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
     }
     .foot{
         margin-bottom: 0;
