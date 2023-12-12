@@ -155,7 +155,7 @@ function Jogo() {
                 {isVisible && (
                     <section className={styles.hidden}>
                     <div className={styles.blue}>
-                        <h3>Error Error</h3>   
+                        <h4>Error Error</h4>   
                         <button className={styles.fecha} onClick={fecharDiv}><img src="./xizin.png" alt="xis" className={styles.xis}/></button>
                     </div>
                     <div className={styles.d}>
