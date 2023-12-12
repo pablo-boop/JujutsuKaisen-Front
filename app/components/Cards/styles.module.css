@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 15vw;
+    width: 17vw;
     height: 20vw;
     padding: 1rem;
 }
@@ -24,21 +24,14 @@
     font-size: 15px;
 }
 
-.bg {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 90%;
-    height: 100%;
-}
-
 .bgImg {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
-    filter: blur(1.5px);
+    float: left;
+    width:  11vw;
+    height: 20vh;
+    object-fit: cover;
 }
 
 .img {

@@ -148,7 +148,7 @@ function Jogo() {
                                 className={styles.cardChoose}
                                 onClick={() => selectCard(card.uuid, 2)}
                             >
-                                <Cards name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                                <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
                             </div>
                         ))
                     }
@@ -164,6 +164,7 @@ function Jogo() {
                             <Cards
                                 classEdit={styles.deck1}
                                 name={selectedCard1.name}
+                                img={selectedCard1.img}
                                 typeDesc={selectedCard1.typeDescription}
                                 description={selectedCard1.description}
                                 atk={selectedCard1.atk}
@@ -185,6 +186,7 @@ function Jogo() {
                             <Cards
                                 classEdit={styles.deck1}
                                 name={selectedCard2.name}
+                                img={selectedCard2.img}
                                 typeDesc={selectedCard2.typeDescription}
                                 description={selectedCard2.description}
                                 atk={selectedCard2.atk}
@@ -200,7 +202,7 @@ function Jogo() {
                                 key={card.uuid}
                                 onClick={() => selectCard(card.uuid, 1)}
                             >
-                                <Cards name={card.name} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                                <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
                             </div>
                         ))
                     }
