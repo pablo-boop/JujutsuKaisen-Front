@@ -15,6 +15,7 @@ const Parallax = () => {
 
     return (
         <div className={styles.div} ref={ref}>
+            {/*motion.img para a imagem se mover*/}
             <motion.img
                 ref={constraintsRef}
                 src={'/gojoFlying.png'} 
