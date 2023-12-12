@@ -133,7 +133,10 @@ function Jogo() {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
                     <h5 className={styles.h22}>Esta página é feita para computadores</h5>
                     </div>
-                    <button className={styles.butt}>Ok</button>
+                    <div className={styles.butt}>
+                        
+                    <button className={styles.idk}>OK</button>
+                    </div>
                 </section>
             </main>
             <Footer className={styles.foot} />
