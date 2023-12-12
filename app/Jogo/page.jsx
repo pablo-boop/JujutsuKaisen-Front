@@ -5,6 +5,7 @@ import styles from "./jogo.module.css";
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Cards from '../components/Cards/Cards';
+import Link from 'next/link';
 
 function Jogo() {
     //API
@@ -107,6 +108,7 @@ function Jogo() {
         <div className={styles.all}>
             <Header />
             <main className={styles.main}>
+                <div className={styles.fecha2}>
 
                 <section className={styles.battlefield}>
                     <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
@@ -149,8 +151,7 @@ function Jogo() {
                         }
                     </div>
                 </section>
-            
-    
+                </div>
                <div>
                 {isVisible && (
                     <section className={styles.hidden}>
@@ -162,7 +163,11 @@ function Jogo() {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
                     <h5 className={styles.h22}>Esta página é feita para computadores</h5>
                     </div>
-                    <button className={styles.butt} onClick={fecharDiv}>Ok</button>
+                    <Link href={'/'}>
+                    <div className={styles.butt}>
+                    <button className={styles.idk} >Ok</button>
+                    </div>
+                    </Link>
                 </section>
                 )}
                 </div>

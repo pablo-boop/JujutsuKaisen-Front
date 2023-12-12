@@ -129,13 +129,7 @@
     width: 1.3rem;
    
 }
-.fecha{
-    margin-left: 12.7rem;
-    height: 1.3rem;
-    width: 1.3rem;
-    border: none;
-    background-color: rgb(0, 0, 198);
-}
+
 .war{
     height: 2.1rem;
     width: 2.1rem;
@@ -152,6 +146,20 @@
 
 
 @media only screen and (max-device-width: 900px) {
+    .fecha2{
+        margin-left: 12.7rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        border: none;
+        background-color: blue;
+    }
+    .fecha{
+        margin-left: 12.7rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        border: none;
+        background-color: rgb(0, 0, 198);
+    }
     .butt{
         font-size: 0.6rem;
         margin-top: 1rem;
@@ -184,7 +192,8 @@ box-shadow: 1px 1px 0px 2px rgba(0,0,0,0.75);
         flex-direction: column;
         visibility: visible;
         background-color: rgb(203, 203, 203);
-        margin-top: 29rem;
+        margin-top: 10rem;
+        margin-bottom: 20rem;
         height: 22vh;
         width: 85vw;
         border-radius: 0.1rem;
@@ -213,7 +222,7 @@ box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.66);
     .box {
         display: none;
         visibility: hidden;
-        margin-top: -20rem;
+       
 
     }
 }
