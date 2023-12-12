@@ -25,6 +25,7 @@ const Parallax = () => {
                 drag
                 dragConstraints={constraintsRef}
             />
+            {/*motion.div para cobrir a imagem com o scroll*/}
             <motion.div className={styles.bg} style={
                 {
                     backgroundImage: `url(/Shibuya.webp)`,
