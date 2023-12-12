@@ -50,8 +50,7 @@
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
-    width: 90%;
-    height: auto;
+    width: 100%;
     background-color: #1e1e1e;
     border-radius: 0.3rem;
     padding: 1rem;
@@ -65,7 +64,6 @@
     color: #e6e6e6;
     font-family: jujutsu;
     font-size: 15px;
-    margin-bottom: 0.5rem;
 }
 
 .description {
@@ -75,7 +73,6 @@
     color: #e6e6e6;
     font-family: jujutsu;
     font-size: 10px;
-    margin-bottom: 0.5rem;
 }
 
 .properties {
@@ -85,7 +82,6 @@
     color: #e6e6e6;
     font-family: jujutsu;
     font-size: 20px;
-
 }
 
 .atkDef {

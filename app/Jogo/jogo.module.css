@@ -16,10 +16,11 @@
 }
 
 .imgBattle {
-    width: 100%;
-    height: 100%;
-    filter: invert(85%);
+    width: 98.9vw;
+    height: 200vh;
+    filter: invert(70%);
     position: relative;
+    background-repeat: no-repeat
 }
 
 .purpleBg {
@@ -38,6 +39,7 @@
     width: 50%;
     filter: blur(5px);
     position: absolute;
+    bottom: 23rem;
 }
 
 .cards {
@@ -58,7 +60,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -1rem;
+    top: 4rem;
 }
 
 .deck2 {
@@ -74,8 +76,10 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+    height: 70vh;
     margin: 2rem;
     position: relative;
+    bottom: -3rem;
 }
 
 .battleBtn {
@@ -109,6 +113,12 @@
 
 .heart {
     width: 2vw;
+}
+
+.heart1, .heart2 {
+    position: relative;
+    bottom: 2rem;
+    right: 0.5rem;
 }
 
 .popUp {
