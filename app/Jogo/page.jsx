@@ -6,6 +6,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Cards from '../components/Cards/Cards';
 import { useRouter } from 'next/navigation';
+import Popup from '../components/PopUp/PopUp';
 
 function Jogo() {
     //API
@@ -19,9 +20,17 @@ function Jogo() {
     const [selectedCard2, setSelectedCard2] = useState(null);
     const [player1Life, setPlayer1Life] = useState(5);
     const [player2Life, setPlayer2Life] = useState(5);
+
     //Card media points
     const [mp1, setMp1] = useState(0)
     const [mp2, setMp2] = useState(0)
+
+    //PopUp Handle
+    const [showPopup, setShowPopup] = useState(false);
+
+    const closePopup = () => {
+        setShowPopup(false);
+    };
 
     useEffect(() => {
         async function fetchCards() {
@@ -84,16 +93,24 @@ function Jogo() {
     }
 
     useEffect(() => {
-        if (player1Life === 0) {
-            console.log("Player 2 won");
-        } else if (player2Life === 0) {
-            console.log("Player 1 won");
+        if (player1Life == 0) {
+            setShowPopup(true)
+        } else if (player2Life == 0) {
+            setShowPopup(true)
         }
     }, [player1Life, player2Life]);
 
 
     return (
         <main className={styles.main}>
+            <div className={styles.popUp}>
+                <Popup
+                    showPopup={showPopup}
+                    imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
+                    text="Você ganhou!"
+                    onClose={closePopup}
+                />
+            </div>
             <section className={styles.battlefield}>
                 <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
                 <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
@@ -114,7 +131,12 @@ function Jogo() {
                     }
                 </div>
                 <div className={styles.battleCenter}>
-                    <div>
+                    <div className={styles.card1}>
+                        <div className={styles.heart1}>
+                            {Array.from({ length: player1Life }, (_, index) => (
+                                <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
+                            ))}
+                        </div>
                         {selectedCard1 && (
                             <Cards
                                 classEdit={styles.deck1}
@@ -130,7 +152,12 @@ function Jogo() {
                         <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
                         <button className={styles.battleBtn} onClick={() => route.push('/')}>Voltar</button>
                     </div>
-                    <div>
+                    <div className={styles.card2}>
+                        <div className={styles.heart2}>
+                            {Array.from({ length: player2Life }, (_, index) => (
+                                <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
+                            ))}
+                        </div>
                         {selectedCard2 && (
                             <Cards
                                 classEdit={styles.deck1}
