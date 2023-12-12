@@ -7,14 +7,14 @@ const url = process.env.BASE_URL + '/students';
 export async function GET(request, { params }) {
     const { id } = params;
 
-    console.log(id);
+   // console.log(id);
 
     try {
         const response = await axios.get(`${url}/${id}`);
 
         return NextResponse.json(response.data);
     } catch (error) {
-        console.log("[ORDER_GET]", error);
+        //console.log("[ORDER_GET]", error);
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
@@ -28,7 +28,7 @@ export async function PUT(request, { params }) {
 
         return NextResponse.json(response.data);
     } catch (error) {
-        console.log("[ORDER_PUT]", error);
+        //console.log("[ORDER_PUT]", error);
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
@@ -39,7 +39,7 @@ export async function DELETE(request, { params }) {
         const response = await axios.delete(`${url}/${id}`);
         return NextResponse.json(response.data);
     } catch (error) {
-        console.log("[ORDER_DELETE]", error);
+        //console.log("[ORDER_DELETE]", error);
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
