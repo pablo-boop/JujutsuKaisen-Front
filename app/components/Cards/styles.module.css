@@ -29,9 +29,9 @@
     align-items: center;
     justify-content: center;
     float: left;
-    width:  11vw;
-    height: 20vh;
-    object-fit: cover;
+    width:  12vw;
+    height: 22vh;
+    object-fit: contain;
 }
 
 .img {
