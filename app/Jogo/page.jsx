@@ -128,7 +128,7 @@ function Jogo() {
                     </div>
                 </section>
                 <section className={styles.hidden}>
-                    <div className={styles.blue}><h3>Error Error</h3><img src="./xizin.png" alt="xis" className={styles.xis}/></div>
+                    <div className={styles.blue}><h4>Error Error</h4><img src="./xizin.png" alt="xis" className={styles.xis}/></div>
                     <div className={styles.d}>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
                     <h5 className={styles.h22}>Esta página é feita para computadores</h5>
