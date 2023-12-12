@@ -110,6 +110,7 @@
         width: 20rem;
         height: 15rem;
         margin-bottom: 13rem;
+        display: none;
     }
 
     .box .overlapGroup {
