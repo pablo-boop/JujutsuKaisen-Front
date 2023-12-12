@@ -68,7 +68,7 @@ const Detalhes = () => {
         }
 
         fetchCards();
-    }, [searchAtk, searchDef]);
+    }, [searchAtk, searchDef, dados]);
 
     //Função PUT e DELETE
     const deletar = async (id) => {

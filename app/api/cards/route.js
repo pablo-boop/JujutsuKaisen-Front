@@ -13,7 +13,7 @@ export async function GET(request) {
         if(atk || def) {
             const atkCondition = atk === undefined || atk === null ? "": `atk=${atk}`
             const defCondition = def === undefined || def === null ? "": `&def=${def}`
-            const response = await axios.get(`${url}?atk=${atk}${defCondition}`);
+            const response = await axios.get(`${url}?atk=${atkCondition}${defCondition}`);
             return NextResponse.json(response.data.filter);
         } else {
             const response = await axios.get(url);

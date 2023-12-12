@@ -36,9 +36,9 @@ function Jogo() {
         async function fetchCards() {
             try {
                 const response = await axios.get('/api/cards');
-                setDados(response.data.cards);
-                const deck1 = generateDeck(response.data.cards);
-                const deck2 = generateDeck(response.data.cards.filter(card => !deck1.includes(card)));
+                setDados(response.data);
+                const deck1 = generateDeck(response.data);
+                const deck2 = generateDeck(response.data.filter(card => !deck1.includes(card)));
                 setPlayer1Deck(deck1);
                 setPlayer2Deck(deck2);
                 balance()
@@ -48,6 +48,8 @@ function Jogo() {
         }
         fetchCards();
     }, []);
+
+    console.log(dados);
 
     function generateDeck(cards) {
         let deck = [];
