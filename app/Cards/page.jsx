@@ -29,7 +29,8 @@ const Detalhes = () => {
     const [level, setLevel] = useState('')
 
     //Estado da Search Bar
-    const [searchBar, setSearchBar] = useState('')
+    const [searchAtk, setSearchAtk] = useState('')
+    const [searchDef, setSearchDef] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,16 +48,27 @@ const Detalhes = () => {
     useEffect(() => {
         async function fetchCards() {
             try {
-                const response = await axios.get('/api/cards');
-                setDados(response.data.cards);
-                setCards(response.data.cards);
+                let queryParams = '';
+                if(searchAtk) {
+                    queryParams += `atk=${searchAtk}&`
+                }
+                if(searchDef) {
+                    queryParams += `def=${searchDef}&`
+                }
+
+                if(queryParams.length > 0) {
+                    queryParams = queryParams.slice(0, -1)
+                }
+                const response = await axios.get(`/api/cards?${queryParams}`);
+                setDados(response.data);
+                setCards(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         }
 
         fetchCards();
-    }, [dados]);
+    }, [searchAtk, searchDef]);
 
     //Função PUT e DELETE
     const deletar = async (id) => {
@@ -129,19 +141,14 @@ const Detalhes = () => {
                     </div> */}
                     <div className={styles.map}>
                         <div className={styles.filterBar}>
-                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo nome' value={searchBar} onChange={e => setSearchBar(e.target.value)} />
+                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo Ataque' value={searchAtk} onChange={e => setSearchAtk(e.target.value)} />
+                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pela Defesa' value={searchDef} onChange={e => setSearchDef(e.target.value)} />
                         </div>
                         {
                             dados ? (
                                 <div className={styles.mappedCards}>
                                     {
-                                        cards.filter((name) => {
-                                            if (searchBar == "") {
-                                                return name
-                                            } else if (name.name.toLowerCase().includes(searchBar.toLocaleLowerCase())) {
-                                                return name
-                                            }
-                                        }).map((cards) => (
+                                        cards.map((cards) => (
                                             <motion.div
                                                 key={cards.uuid}
                                                 animate={{ y: 25 }}
