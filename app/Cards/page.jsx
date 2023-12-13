@@ -165,7 +165,7 @@ const Detalhes = () => {
                                     }
                                 </div>
                             ) : (
-                                <img src="/gozo-unscreen.gif" />
+                                <img className={styles.img} src="/gozo-unscreen.gif" />
                             )
                         }
                     </div>
