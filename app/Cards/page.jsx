@@ -83,7 +83,7 @@ const Detalhes = () => {
     };
 
     const update = async (id) => {
-        router.push(`/Detalhes/${id}`);
+        router.push(`/Cards/${id}`);
     };
 
     //Função de limpar os campos dos inputs
