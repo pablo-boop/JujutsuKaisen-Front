@@ -7,6 +7,7 @@ import Footer from '../components/Footer/Footer';
 import Cards from '../components/Cards/Cards';
 import { useRouter } from 'next/navigation';
 import Popup from '../components/PopUp/PopUp';
+import Link from 'next/link';
 
 function Jogo() {
     //API
@@ -32,13 +33,12 @@ function Jogo() {
         setShowPopup(false);
     };
 
+    const [isVisible, setIsVisible] = useState(true); // Estado para controlar a visibilidade da div
 
-        const [isVisible, setIsVisible] = useState(true); // Estado para controlar a visibilidade da div
-      
-        // Função para fechar a div (altera o estado para tornar a div invisível)
-        const fecharDiv = () => {
-          setIsVisible(false);
-        };
+    // Função para fechar a div (altera o estado para tornar a div invisível)
+    const fecharDiv = () => {
+        setIsVisible(false);
+    };
 
 
     useEffect(() => {
@@ -83,7 +83,7 @@ function Jogo() {
         setPlayer1Deck(newPlayer1Deck);
         setPlayer2Deck(newPlayer2Deck);
     }
-    
+
     const balance = () => {
         player1Deck.forEach((card) => {
             if (card.atk + card.def > 1000) {
@@ -128,13 +128,13 @@ function Jogo() {
         const [setShowPopup] = useState(false);
 
         const div = () => {
-          setShowPopup(true);
-      
+            setShowPopup(true);
+
         };
-      
+
         const closePopup = () => {
-          setShowPopup(false);
-      
+            setShowPopup(false);
+
         };
     }
 
@@ -145,119 +145,186 @@ function Jogo() {
     }, [player1Life, player2Life]);
 
     return (
-        <main className={styles.main}>
-            <div className={styles.popUp}>
-                {
-                    showPopup && (
+            <main className={styles.main}>
+                <div className={styles.popUp}>
+                    {showPopup && (
                         <Popup
-                        showPopup={showPopup}
-                        imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
-                        text={player1Life === 0 ? "Player 2 Ganhou!" : "Player 1 Ganhou!"}
-                        onClose={closePopup}
-                    />
-                    )
-                }
-            </div>
-            <section className={styles.battlefield}>
-                <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
-                <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
-                <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
-            </section>
-            <section className={styles.table}>
-                <div className={styles.deck2}>
-                    {
-                        player2Deck.map((card) => (
-                            <div
-                                key={card.uuid}
-                                className={styles.cardChoose}
-                                onClick={() => selectCard(card.uuid, 2)}
-                            >
-                                <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
-                            </div>
-                        ))
-                    }
+                            showPopup={showPopup}
+                            imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
+                            text={player1Life === 0 ? "Player 2 Ganhou!" : "Player 1 Ganhou!"}
+                            onClose={closePopup}
+                        />
+                    )}
                 </div>
-                <div className={styles.battleCenter}>
-                    <div className={styles.card1}>
-                        <div className={styles.heart1}>
-                            {Array.from({ length: player1Life }, (_, index) => (
-                                <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
-                            ))}
-                        </div>
-                        <div className={styles.bgCard}>
-                        {selectedCard1 && (
-                            <Cards
-                                classEdit={styles.deck1}
-                                name={selectedCard1.name}
-                                img={selectedCard1.img}
-                                typeDesc={selectedCard1.typeDescription}
-                                description={selectedCard1.description}
-                                atk={selectedCard1.atk}
-                                def={selectedCard1.def}
-                            />
-                        )}
-                        </div>
+                <section className={styles.battlefield}>
+                    <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
+                    <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
+                    <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
+                </section>
+                <section className={styles.table}>
+                    <div className={styles.deck2}>
+                        {
+                            player2Deck.map((card) => (
+                                <div
+                                    key={card.uuid}
+                                    className={styles.cardChoose}
+                                    onClick={() => selectCard(card.uuid, 2)}
+                                >
+                                    <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                                </div>
+                            ))
+                        }
                     </div>
-                    <div className={styles.actions}>
-                        <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
-                        <button className={styles.battleBtn} onClick={() => route.push('/')}>Voltar</button>
-                    </div>
-                    <div className={styles.card2}>
-                        <div className={styles.heart2}>
-                            {Array.from({ length: player2Life }, (_, index) => (
-                                <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
-                            ))}
+                    <div className={styles.battleCenter}>
+                        <div className={styles.card1}>
+                            <div className={styles.heart1}>
+                                {Array.from({ length: player1Life }, (_, index) => (
+                                    <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
+                                ))}
+                            </div>
+                            <div className={styles.bgCard}>
+                                {selectedCard1 && (
+                                    <Cards
+                                        classEdit={styles.deck1}
+                                        name={selectedCard1.name}
+                                        img={selectedCard1.img} typeDesc={selectedCard1.typeDescription}
+                                        description={selectedCard1.description}
+                                        atk={selectedCard1.atk}
+                                        def={selectedCard1.def}
+                                    />
+                                )}
+                            </div>
                         </div>
-                        <div className={styles.bgCard}>
-                        {selectedCard2 && (
-                            <Cards
-                                classEdit={styles.deck1}
-                                name={selectedCard2.name}
-                                img={selectedCard2.img}
-                                typeDesc={selectedCard2.typeDescription}
-                                description={selectedCard2.description}
-                                atk={selectedCard2.atk}
-                                def={selectedCard2.def}
-                            />
-                        )}
+                        <div className={styles.actions}>
+                            <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
+                            <button className={styles.battleBtn} onClick={() => route.push('/')}>Voltar</button>
+                        </div>
+                        <div className={styles.card2}>
+                            <div className={styles.heart2}>
+                                {Array.from({ length: player2Life }, (_, index) => (
+                                    <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
+                                ))}
+                            </div>
+                            <div className={styles.bgCard}>
+                                {selectedCard2 && (
+                                    <Cards
+                                        classEdit={styles.deck1}
+                                        name={selectedCard2.name}
+                                        img={selectedCard2.img}
+                                        typeDesc={selectedCard2.typeDescription}
+                                        description={selectedCard2.description}
+                                        atk={selectedCard2.atk}
+                                        def={selectedCard2.def}
+                                    />
+                                )}
+                            </div>
                         </div>
                     </div>
                 </section>
-                </div>
                 <div className={styles.deck1}>
-                    {
-                        player1Deck.map((card) => (
-                            <div
-                                key={card.uuid}
-                                onClick={() => selectCard(card.uuid, 1)}
-                            >
-                                <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
-                            </div>
-                        ))
-                    }
-               <div>
-                {isVisible && (
-                    <section className={styles.hidden}>
-                    <div className={styles.blue}>
-                        <h4>Error Error</h4>   
-                        <button className={styles.fecha} onClick={fecharDiv}><img src="./xizin.png" alt="xis" className={styles.xis}/></button>
-                    </div>
-                    <div className={styles.d}>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
-                    <h5 className={styles.h22}>Esta página é feita para computadores</h5>
-                    </div>
-                    <Link href={'/'}>
-                    <div className={styles.butt}>
-                    <button className={styles.idk} >Ok</button>
-                    </div>
-                    </Link>
-                </section>
-                )}
+                    {player1Deck.map((card) => (
+                        <div
+                            key={card.uuid}
+                            onClick={() => selectCard(card.uuid, 1)}
+                        >
+                            <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+                        </div>
+                    ))}
                 </div>
             </main>
-            <Footer className={styles.foot} />
-        </div>
     );
+    // <main className={styles.main}>
+    //     <div className={styles.popUp}>
+    //         {
+    //             showPopup && (
+    //                 <Popup
+    //                 showPopup={showPopup}
+    //                 imageUrl="https://media1.tenor.com/m/KBnATdctL1MAAAAC/jujutsu-kaisen-jujutsu-kaisen-dance.gif"
+    //                 text={player1Life === 0 ? "Player 2 Ganhou!" : "Player 1 Ganhou!"}
+    //                 onClose={closePopup}
+    //             />
+    //             )
+    //         }
+    //     </div>
+    //     <section className={styles.battlefield}>
+    //         <img className={styles.imgBattle} src={'../../background.png'} alt="background" />
+    //         <img className={styles.purpleBg} src={'../../vazio1.png'} alt="effect purple" />
+    //         <img className={styles.purple} src={'../../vazio1.png'} alt="effect purple" />
+    //     </section>
+    //     <section className={styles.table}>
+    //         <div className={styles.deck2}>
+    //             {
+    //                 player2Deck.map((card) => (
+    //                     <div
+    //                         key={card.uuid}
+    //                         className={styles.cardChoose}
+    //                         onClick={() => selectCard(card.uuid, 2)}
+    //                     >
+    //                         <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+    //                     </div>
+    //                 ))
+    //             }
+    //         </div>
+    //         <div className={styles.battleCenter}>
+    //             <div className={styles.card1}>
+    //                 <div className={styles.heart1}>
+    //                     {Array.from({ length: player1Life }, (_, index) => (
+    //                         <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
+    //                     ))}
+    //                 </div>
+    //                 <div className={styles.bgCard}>
+    //                 {selectedCard1 && (
+    //                     <Cards
+    //                         classEdit={styles.deck1}
+    //                         name={selectedCard1.name}
+    //                         img={selectedCard1.img}
+    //                         typeDesc={selectedCard1.typeDescription}
+    //                         description={selectedCard1.description}
+    //                         atk={selectedCard1.atk}
+    //                         def={selectedCard1.def}
+    //                     />
+    //                 )}
+    //                 </div>
+    //             </div>
+    //             <div className={styles.actions}>
+    //                 <button className={styles.battleBtn} onClick={() => battle()}>Batalhar</button>
+    //                 <button className={styles.battleBtn} onClick={() => route.push('/')}>Voltar</button>
+    //             </div>
+    //             <div className={styles.card2}>
+    //                 <div className={styles.heart2}>
+    //                     {Array.from({ length: player2Life }, (_, index) => (
+    //                         <img key={index} src={'/heart.png'} alt={`Vida ${index + 1}`} className={styles.heart} />
+    //                     ))}
+    //                 </div>
+    //                 <div className={styles.bgCard}>
+    //                 {selectedCard2 && (
+    //                     <Cards
+    //                         classEdit={styles.deck1}
+    //                         name={selectedCard2.name}
+    //                         img={selectedCard2.img}
+    //                         typeDesc={selectedCard2.typeDescription}
+    //                         description={selectedCard2.description}
+    //                         atk={selectedCard2.atk}
+    //                         def={selectedCard2.def}
+    //                     />
+    //                 )}
+    //                 </div>
+    //             </div>
+    //         </section>
+    //         </div>
+    //         <div className={styles.deck1}>
+    //             {
+    //                 player1Deck.map((card) => (
+    //                     <div
+    //                         key={card.uuid}
+    //                         onClick={() => selectCard(card.uuid, 1)}
+    //                     >
+    //                         <Cards name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} />
+    //                     </div>
+    //                 ))
+    //             }
+    //         </div>
+    //     </main>
 }
 
 export default Jogo
