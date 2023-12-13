@@ -92,14 +92,14 @@
     font-family: jujutsu;
     
 }
-
+/*fonte*/
 @font-face {
     font-family: jujutsu;
     src: url('../../../public/jujutsu.ttf');
 }
-
-@media only screen and (max-width: 600px) {
-    .box {
+/*responsividade*/
+@media only screen and (max-width: 600px){
+    .box{
         width: 20rem;
         height: 15rem;
         margin-bottom: 13rem;

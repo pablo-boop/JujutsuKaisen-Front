@@ -15,6 +15,7 @@ const Parallax = () => {
 
     return (
         <div className={styles.div} ref={ref}>
+            {/*motion.img para a imagem se mover*/}
             <motion.img
                 ref={constraintsRef}
                 src={'/gojoFlying.png'} 
@@ -24,6 +25,7 @@ const Parallax = () => {
                 drag
                 dragConstraints={constraintsRef}
             />
+            {/*motion.div para cobrir a imagem com o scroll*/}
             <motion.div className={styles.bg} style={
                 {
                     backgroundImage: `url(/Shibuya.webp)`,

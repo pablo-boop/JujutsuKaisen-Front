@@ -32,7 +32,7 @@
     color: #f4f4f4;
 }
 
-
+/*responsividade*/
 @media (max-width:768px) {
     .footer {
         display: flex;
