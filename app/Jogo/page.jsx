@@ -32,6 +32,15 @@ function Jogo() {
         setShowPopup(false);
     };
 
+
+        const [isVisible, setIsVisible] = useState(true); // Estado para controlar a visibilidade da div
+      
+        // Função para fechar a div (altera o estado para tornar a div invisível)
+        const fecharDiv = () => {
+          setIsVisible(false);
+        };
+
+
     useEffect(() => {
         async function fetchCards() {
             try {
@@ -115,12 +124,25 @@ function Jogo() {
         setSelectedCard2(null);
     }
 
+    const resp = () => {
+        const [setShowPopup] = useState(false);
+
+        const div = () => {
+          setShowPopup(true);
+      
+        };
+      
+        const closePopup = () => {
+          setShowPopup(false);
+      
+        };
+    }
+
     useEffect(() => {
         if (player1Life === 0 || player2Life === 0) {
             setShowPopup(true);
         }
     }, [player1Life, player2Life]);
-
 
     return (
         <main className={styles.main}>
@@ -200,6 +222,7 @@ function Jogo() {
                         )}
                         </div>
                     </div>
+                </section>
                 </div>
                 <div className={styles.deck1}>
                     {
@@ -212,9 +235,28 @@ function Jogo() {
                             </div>
                         ))
                     }
+               <div>
+                {isVisible && (
+                    <section className={styles.hidden}>
+                    <div className={styles.blue}>
+                        <h4>Error Error</h4>   
+                        <button className={styles.fecha} onClick={fecharDiv}><img src="./xizin.png" alt="xis" className={styles.xis}/></button>
+                    </div>
+                    <div className={styles.d}>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/2219px-Warning.svg.png" alt="warning" className={styles.war} />
+                    <h5 className={styles.h22}>Esta página é feita para computadores</h5>
+                    </div>
+                    <Link href={'/'}>
+                    <div className={styles.butt}>
+                    <button className={styles.idk} >Ok</button>
+                    </div>
+                    </Link>
+                </section>
+                )}
                 </div>
-            </section>
-        </main>
+            </main>
+            <Footer className={styles.foot} />
+        </div>
     );
 }
 

@@ -20,7 +20,7 @@ export async function GET(request) {
             return NextResponse.json(response.data.cards);
         }
     } catch (error) {
-        console.log("[ORDER_GET]", error);
+     //   console.log("[ORDER_GET]", error);
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
@@ -33,7 +33,7 @@ export async function POST(request) {
 
         return NextResponse.json(response.data);
     } catch (error) {
-        console.log("[ORDER_POST]", error);
+       // console.log("[ORDER_POST]", error);
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
@@ -50,7 +50,7 @@ export async function PUT(req, res) {
         return NextResponse.json(response.data);
     } catch (error) {
         //em caso de erro nas requisições, retorna uma mensagem de erro interno no servidor
-        console.log("[ORDER_PUT]", error);
+        //console.log("[ORDER_PUT]", error);
         return res.status(500).send("Erro interno do servidor!");
     }
 }
@@ -67,7 +67,7 @@ export async function DELETE(req, res) {
         return NextResponse.json(response.data);
     } catch (error) {
         //em caso de erro nas requisições, retorna uma mensagem de erro interno no servidor
-        console.log("[ORDER_DELETE]", error);
+       // console.log("[ORDER_DELETE]", error);
         return res.status(500).send("Erro interno do servidor!");
     }
 }

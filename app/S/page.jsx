@@ -6,6 +6,7 @@ import Popup from '../components/PopUp/PopUp';
 const App = () => {
   const [showPopup, setShowPopup] = useState(true);
 
+  //fechar PopUp
   const closePopup = () => {
     setShowPopup(false);
   };
