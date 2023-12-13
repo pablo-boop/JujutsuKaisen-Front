@@ -46,7 +46,7 @@ export default function UpdateStudent({ params }) {
         fetchCards();
     }, []);
 
-    console.log(dados);
+   // console.log(dados);
 
     const atualizarCard = (e) => {
         e.preventDefault();

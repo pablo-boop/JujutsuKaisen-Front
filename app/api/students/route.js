@@ -11,7 +11,7 @@ export async function GET() {
         //retorna uma resposta para a próxima camada de aplicação com os dados recebidos
         return NextResponse.json(response.data);
     } catch (error) {
-        console.log("[ORDER_GET]", error);
+        //console.log("[ORDER_GET]", error);
         //em caso de erro nas requisições, retorna uma mensagem de erro interno no servidor
         return NextResponse("Erro de servidor lá no back", { status: 500 })
     }
@@ -29,7 +29,7 @@ export async function POST(req) {
         return NextResponse.json(response.data);
     } catch (error) {
         //em caso de erro nas requisições, retorna uma mensagem de erro interno no servidor
-        console.log("[ORDER_POST]", error);
+       // console.log("[ORDER_POST]", error);
         return new NextResponse("Erro interno do servidor!", { status: 500 });
     }
 }
