@@ -33,8 +33,7 @@ const Header = () => {
                 <ul className={styles.ul}>
                     <li><Link href={'/Cards'}>Cartas</Link></li>
                     <li><Link href={'/Students'}>Estudantes</Link></li>
-                    <li><Link href={'/Jogo'}>Jogo</Link></li>
-                    <li><Link href={'/S'}>S</Link></li>
+                    <li className={styles.jogo}><Link href={'/Jogo'}>Jogo</Link></li>
                     <li><Link href={'/Contato'}>Contato</Link></li>
                 </ul>
             </nav>

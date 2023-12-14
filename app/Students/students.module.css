@@ -73,20 +73,20 @@
     gap: 0.3rem;
 }
 
-.mappedCards::-webkit-scrollbar {
+.map::-webkit-scrollbar {
     width: 0.7rem;
     padding: 1rem;
     height: 5rem;
 }
 
 /* Track */
-.mappedCards::-webkit-scrollbar-track {
+.map::-webkit-scrollbar-track {
     border-radius: 100vh;
     background: #1f2937;
 }
 
 /* Handle */
-.mappedCards::-webkit-scrollbar-thumb {
+.map::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, rgba(79, 9, 9, 1) 35%, rgba(230, 230, 230, 1) 100%);
     height: 5rem;
     border-radius: 100vh;
@@ -156,5 +156,40 @@
 
     .input{
         width: 16.6rem;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 65vw;
+        height: 80%;
+        color: #e6e6e6;
+        height: auto;
+        background-color: transparent;
+        padding: 2rem;
+        border-radius: 0.4rem;
+        gap: 0.8rem;
+        -webkit-box-shadow: 10px 10px 22px -14px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 10px 10px 22px -14px rgba(0, 0, 0, 0.6);
+        box-shadow: 10px 10px 22px -14px rgba(0, 0, 0, 0.6);
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        margin: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .btnActions {
+        width: 40vw;
+        height: 4vh;
+        border: none;
+        background-color: #e6e6e6;
+        border-radius: 0.3rem;
     }
 }

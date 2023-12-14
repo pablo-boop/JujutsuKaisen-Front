@@ -5,6 +5,7 @@ import axios from "axios";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import { useRouter } from 'next/navigation';
+import Popup from '../components/PopUp/PopUp'
 
 const Students = () => {
 
@@ -19,15 +20,22 @@ const Students = () => {
     const [email, setEmail] = useState('')
     const [description, setDescription] = useState('')
 
+        //PopUp
+        const [showPopUp, setShowPopUp] = useState(false)
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await axios.post("/api/students", { name, age, email, description });
-            setStudents([...students, response.data.students]);
-            clean()
-        } catch (error) {
-            console.error("Error submitting data:", error);
+        if(name == "" || age == "" || email == "" || description == "") {
+            setShowPopUp(true)
+        } else {
+            try {
+                const response = await axios.post("/api/students", { name, age, email, description });
+                setStudents([...students, response.data.students]);
+                clean()
+            } catch (error) {
+                console.error("Error submitting data:", error);
+            }
         }
     };
 
@@ -69,10 +77,19 @@ const Students = () => {
         router.push(`/Students/${id}`);
     };
 
+    const close = () => {
+        setShowPopUp(false)
+    }
+
     return (
         <>
             <Header />
             <main className={styles.main}>
+            {
+                    showPopUp && (
+                        <Popup text={'Preencha todos os campos!'} imageUrl={'https://www.icegif.com/wp-content/uploads/2022/02/icegif-752.gif'} onClose={close} showPopup={showPopUp} />
+                    )
+                }
                 <div className={styles.register}>
                     <section className={styles.registerTitle}>
                         <h1 className={styles.title}>STUDENTS</h1>
@@ -109,7 +126,7 @@ const Students = () => {
                 </div>
                 <div className={styles.map}>
                     {
-                        dados ? (
+                        dados !== null ? (
                             students.map((student) => (
                                 <div key={student.id} className={styles.cards}>
                                     <label className={styles.label}>

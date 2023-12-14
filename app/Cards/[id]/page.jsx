@@ -63,7 +63,7 @@ export default function UpdateStudent({ params }) {
 
             })
             .then((response) => {
-                router.push('/Detalhes');
+                router.push('/Cards');
             });
     };
 
@@ -79,7 +79,7 @@ export default function UpdateStudent({ params }) {
                             <form onSubmit={atualizarCard}>
                                 <section className={styles.register}>
                                     <div className={styles.registerTitle}>
-                                        <h2 className={styles.title}>Registrar personagens</h2>
+                                        <h2 className={styles.title}>Atualizar personagen</h2>
                                     </div>
                                     <input className={styles.input} type="text" value={name} onChange={e => setName(e.target.value)} placeholder='Nome' />
                                     <select className={styles.select} name="type" id="type" onChange={e => setType(e.target.value)}>
