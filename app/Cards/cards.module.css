@@ -221,13 +221,30 @@
         margin-left: 1.3vw;
     }
 
+    .map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        height: 100vh;
+        gap: 5rem;
+        padding: 2rem;
+    }
+
+    .dados {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .mappedCards {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 70vh;
+        max-height: 75vh;
         overflow-y: auto;
         gap: 3rem;
         padding: 1rem;

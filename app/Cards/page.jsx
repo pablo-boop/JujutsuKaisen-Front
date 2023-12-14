@@ -10,6 +10,8 @@ import { useRouter } from 'next/navigation';
 //Hook imports
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { getFormLabelUtilityClasses } from '@mui/material';
+import Popup from '../components/PopUp/PopUp'
 
 const Detalhes = () => {
 
@@ -32,8 +34,15 @@ const Detalhes = () => {
     const [searchAtk, setSearchAtk] = useState('')
     const [searchDef, setSearchDef] = useState('')
 
+    //PopUp
+    const [showPopUp, setShowPopUp] = useState(false)
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (name == "" || type == "" || img == "" || typeDesc == "" || description == "" || atk == "" || def == "" || level == "") {
+            setShowPopUp(true)
+        }
 
         try {
             const response = await axios.post("/api/cards", { name, type, img, typeDesc, description, atk, def, level });
@@ -49,14 +58,14 @@ const Detalhes = () => {
         async function fetchCards() {
             try {
                 let queryParams = '';
-                if(searchAtk) {
+                if (searchAtk) {
                     queryParams += `atk=${searchAtk}&`
                 }
-                if(searchDef) {
+                if (searchDef) {
                     queryParams += `def=${searchDef}&`
                 }
 
-                if(queryParams.length > 0) {
+                if (queryParams.length > 0) {
                     queryParams = queryParams.slice(0, -1)
                 }
                 const response = await axios.get(`/api/cards?${queryParams}`);
@@ -98,10 +107,19 @@ const Detalhes = () => {
         setLevel('')
     }
 
+    const close = () => {
+        setShowPopUp(false)
+    }
+
     return (
         <>
             <Header />
             <main className={styles.main}>
+                {
+                    showPopUp && (
+                        <Popup text={'Preencha todos os campos!'} imageUrl={'https://www.icegif.com/wp-content/uploads/2022/02/icegif-752.gif'} onClose={close} showPopup={showPopUp} />
+                    )
+                }
                 <div>
                     <section className={styles.register}>
                         <div className={styles.registerTitle}>
@@ -134,42 +152,35 @@ const Detalhes = () => {
                     </section>
                 </div>
                 <div className={styles.cards}>
-                    {/* <div className={styles.filters}>
-                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Feiticeiros</motion.button>
-                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Maldições</motion.button>
-                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnFilter}>Efeitos</motion.button>
-                    </div> */}
-                    <div className={styles.map}>
-                        <div className={styles.filterBar}>
-                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo Ataque' value={searchAtk} onChange={e => setSearchAtk(e.target.value)} />
-                            <input type="text" className={styles.searchBar} placeholder='Pesquisar pela Defesa' value={searchDef} onChange={e => setSearchDef(e.target.value)} />
-                        </div>
-                        {
-                            dados ? (
-                                <div className={styles.mappedCards}>
-                                    {
-                                        cards.map((cards) => (
-                                            <motion.div
-                                                key={cards.uuid}
-                                                animate={{ y: 25 }}
-                                                transition={{ type: "spring", stiffness: 100 }}
-                                                className={styles.cardMap}
-                                            >
-                                                <Cards className={styles.all} name={cards.name} img={cards.img} typeDesc={cards.typeDescription} description={cards.description} atk={cards.atk} def={cards.def} level={cards.level} />
-                                                <div className={styles.actions}>
-                                                    <motion.button onClick={() => update(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
-                                                    <motion.button onClick={() => deletar(cards.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Exluir</motion.button>
-                                                </div>
-                                            </motion.div>
-                                        ))
-                                    }
-                                </div>
-                            ) : (
-                                <img className={styles.img} src="/gozo-unscreen.gif" />
-                            )
-                        }
+                <div className={styles.map}>
+                    <div className={styles.filterBar}>
+                        <input type="text" className={styles.searchBar} placeholder='Pesquisar pelo Ataque' value={searchAtk} onChange={e => setSearchAtk(e.target.value)} />
+                        <input type="text" className={styles.searchBar} placeholder='Pesquisar pela Defesa' value={searchDef} onChange={e => setSearchDef(e.target.value)} />
+                    </div>
+                    <div className={styles.dados}>
+                        {dados !== null ? (
+                            <div className={styles.mappedCards}>
+                                {cards.map((card) => (
+                                    <motion.div
+                                        key={card.uuid}
+                                        animate={{ y: 25 }}
+                                        transition={{ type: "spring", stiffness: 100 }}
+                                        className={styles.cardMap}
+                                    >
+                                        <Cards className={styles.all} name={card.name} img={card.img} typeDesc={card.typeDescription} description={card.description} atk={card.atk} def={card.def} level={card.level} />
+                                        <div className={styles.actions}>
+                                            <motion.button onClick={() => update(card.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Editar</motion.button>
+                                            <motion.button onClick={() => deletar(card.uuid)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className={styles.btnActions}>Excluir</motion.button>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        ) : (
+                            <img className={styles.img} src="/gozo-unscreen.gif" alt="Loading" />
+                        )}
                     </div>
                 </div>
+            </div>
             </main>
             <Footer />
         </>

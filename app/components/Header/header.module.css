@@ -48,7 +48,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color:#ad2621e2;
+    background-color: #ad2621e2;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -60,26 +60,30 @@
 /*responsivade*/
 @media (max-width:768px) {
     .header {
-     display: flex;
-     justify-content: center;
-     align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
- 
-   .header img {
-     margin-left: 2rem;
-     height: 5rem;
-     width: 5rem;
-   }
- 
-   .img  img{
-     align-content: center;
-     margin: 0 auto;
-     height: 4.5rem;
-     width: 9.5rem;
-     margin-right: 1rem;
-   }
 
-   .nav {
-    margin-right: 2rem;
-   }
- }
+    .header img {
+        margin-left: 2rem;
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .img img {
+        align-content: center;
+        margin: 0 auto;
+        height: 4.5rem;
+        width: 9.5rem;
+        margin-right: 1rem;
+    }
+
+    .nav {
+        margin-right: 2rem;
+    }
+
+    .jogo {
+        display: none;
+    }
+}
