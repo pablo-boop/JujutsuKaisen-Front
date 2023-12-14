@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: auto;
 }
 
 .battlefield {
@@ -10,8 +11,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .imgBattle {
@@ -54,10 +55,6 @@
     justify-content: center;
 }
 
-.foot {
-    height: auto;
-}
-
 .deck1 {
     display: flex;
     align-items: center;
@@ -71,7 +68,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -80rem;
+    top: -75rem;
 }
 
 .battleCenter {
