@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    bottom: 0;
 }
 
 .texto {
@@ -31,7 +32,7 @@
     color: #f4f4f4;
 }
 
-
+/*responsividade*/
 @media (max-width:768px) {
     .footer {
         display: flex;

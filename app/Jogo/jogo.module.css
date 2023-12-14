@@ -3,117 +3,154 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
 }
 
-.box {
-    height: 90%;
-    width: 100%;
-    background-image: #212832;
-}
-
-.box .group {
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.box .overlap {
+.battlefield {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 100%;
+}
+
+.imgBattle {
+    width: 98.5vw;
+    height: 200vh;
+    filter: invert(70%);
     position: relative;
+    background-repeat: no-repeat
 }
 
-.box .purple {
-    height: 100%;
-    object-fit: contain;
-    position: absolute;
-    width: 100%;
-}
-
-.box .background {
-    background-color: #212832;
-    height: 100%;
-    left: 0;
-    mix-blend-mode: multiply;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    filter: alpha(opacity=60);
-    /* IE */
-    -moz-opacity: 0.8;
-    /* Mozilla */
-    opacity: 0.95;
-    /* CSS3 */
-    height: 100%;
-    width: 100%;
-}
-
-.box .div {
-    height: 11.8125rem;
-    left: 23.375rem;
-    position: absolute;
-    top: 17.625rem;
-    width: 30.1875rem;
-}
-
-.box .overlapGroup {
+.purpleBg {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 12rem;
-    left: 22rem;
+    width: 70%;
+    filter: blur(150px);
     position: absolute;
-    width: 9rem;
 }
 
-.box .group2 {
-    background-color: #0d0d0d;
-    border: 0.5rem solid;
-    border-color: #e9e9e9;
-    border-radius: 0.5rem;
-    height: 12rem;
-    left: 1.5rem;
+.purple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    filter: blur(5px);
     position: absolute;
-    top: -4rem;
-    width: 8rem;
+    bottom: -12rem;
 }
 
-.box .group3 {
-    background-color: #4f0909;
-    border: 0.5rem solid;
-    border-color: #e9e9e9;
-    border-radius: 0.5rem;
-    height: 8rem;
-    left: 0;
-    position: absolute;
-    top: 3rem;
-    width: 5.5rem;
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
-.box .overlap2 {
-    height: 12rem;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 8.75rem;
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.box .group4 {
-    background-color: #0d0d0d;
-    border: 0.5rem solid;
-    border-color: #e9e9e9;
-    border-radius: 0.5rem;
-    height: 12rem;
-    left: 1.5rem;
-    position: absolute;
-    top: -4rem;
-    width: 8rem;
+.foot {
+    height: auto;
+}
+
+.deck1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 70rem;
+}
+
+.deck2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -80rem;
+}
+
+.battleCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 70vh;
+    margin: 2rem;
+    position: relative;
+    top: -70rem;
+}
+
+.battleBtn {
+    border: none;
+    background-color: #1e1e1e;
+    border: 1px solid #e6e6e6;
+    padding: 0.3rem;
+    width: 10vw;
+    color: #e6e6e6;
+    font-family: jujutsu;
+    font-size: 20px;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 45vh;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 45vh;
+}
+
+.heart {
+    width: 2vw;
+}
+
+.heart1,
+.heart2 {
+    position: relative;
+    bottom: 2rem;
+    right: 0.5rem;
+}
+
+.popUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 15vw;
+    height: 50vh;
+    object-fit: contain;
 }

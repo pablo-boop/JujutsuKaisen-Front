@@ -1,22 +1,21 @@
 import styles from "./styles.module.css";
 
-const Cards = ({name, img, typeDesc, description, atk, def, level}) => {
+const Cards = ({ name, img, typeDesc, description, atk, def }) => {
     return (
-        <div className={styles.box}>
+        <div className={styles.geral} >
             <div className={styles.frontCard}>  {/*Frente da carta*/}
                 <div className={styles.overlapGroup}>
                     <div className={styles.card} />{/*carta*/}
-                    <img className={styles.background} alt="Background" src={img} />  {/*imagem de fundo da carta*/}
-                    <img className={styles.img} alt="Img" src={img} />  {/*imagem principal da carta*/}
-                    <div className={styles.infos} />  {/*informações*/}
+                    <div className={styles.up}><h3 className={styles.nameTitle}>{name}</h3></div>  {/*nome do personagem*/}
+                    <img className={styles.bgImg} alt="Img" src={img} />  {/*imagem principal da carta*/}
+                    <div/>  {/*informações*/}
                     <div className={styles.upInfo} />
-                    <div className={styles.itadoriYuji}>{name}</div>  {/*nome do personagem*/}
-                    <div className={styles.ASDASDA}>  {/*nível e descrição do personagem*/}
-                        {typeDesc} :
+                    <div className={styles.infos}>  {/*nível e descrição do personagem*/}
+                        <p className={styles.titleDesc}>{typeDesc}:</p>
                         <br />
-                        {description}
+                        <p className={styles.description}>{description}</p>
                     </div>
-                    <div className={styles.textWrapper}>{atk} / {def}</div>
+                    <div className={styles.textWrapper}><h3 className={styles.properties}>{atk} / {def}</h3></div>
                 </div>
             </div>
         </div>

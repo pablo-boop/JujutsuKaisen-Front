@@ -1,3 +1,4 @@
+/*Geral*/
 .div {
     display: flex;
     flex-direction: column;
@@ -20,7 +21,7 @@
     width: 80vw;
     margin: 2rem;
 }
-
+/*estilo da imagem do gojo*/
 .gojo {
     width: 20rem;
     position: relative;
@@ -28,7 +29,7 @@
     filter: drop-shadow(0 0 0.75rem #5dadec);
     margin-bottom: 10rem;
 }
-
+/*estilo da animação do banner*/
 .bg {
     position: absolute;
     inset: 0;
